@@ -8,6 +8,7 @@ using UnityEngine.Networking;
 
 namespace HDeMods.HDeItems.Tier1 {
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
+    [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Global")]
     [HDeItem] public class Mouthwash : CharacterBody.ItemBehavior {
         public static ItemDef item;
         public static List<HurtBox> hurtBoxBuffer = new List<HurtBox>();
@@ -26,7 +27,6 @@ namespace HDeMods.HDeItems.Tier1 {
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);
             CharacterBody.onBodyInventoryChangedGlobal += OnInventoryChangedGlobal;
-            CharacterBody.onBodyAwakeGlobal += MouthwashHelper.OnBodyAwakeGlobal;
             
             GameObject temp = ItemManager.HDeItemsBundle.LoadAsset<GameObject>("MouthwashRangeIndicator");
             temp.AddComponent<MouthwashRangeDisplay>();
@@ -42,13 +42,15 @@ namespace HDeMods.HDeItems.Tier1 {
         
         public float totalDistance;
         public MouthwashRangeDisplay igniteSphere;
-        public MouthwashHelper helper;
+        public HDeItemHelper helper;
         public bool active;
-        
+        public bool calcDirty;
+
+        public void SetCalcDirty() => calcDirty = true;
         public void Recalc() => totalDistance = baseDistance + ((float)Math.Tanh((double)(stack - 1) / 20) * 45);
 
         private void Awake() {
-            helper = GetComponent<MouthwashHelper>();
+            helper = GetComponent<HDeItemHelper>();
             enabled = false;
         }
 
@@ -73,7 +75,6 @@ namespace HDeMods.HDeItems.Tier1 {
         }
 
         public void OnTakeDamageServer(DamageReport damageReport) {
-            Recalc();
             searchMe.origin = transform.position;
             searchMe.mask = LayerIndex.entityPrecise.mask;
             searchMe.radius = totalDistance;
@@ -86,8 +87,8 @@ namespace HDeMods.HDeItems.Tier1 {
             foreach (HurtBox box in hurtBoxBuffer) {
                 HealthComponent hc = box.healthComponent;
                 if (!hc) continue;
-                MouthwashHelper mh = hc.GetComponent<MouthwashHelper>();
-                if (mh.damagedThisTick) continue;
+                HDeItemHelper hdh = hc.GetComponent<HDeItemHelper>();
+                if (hdh.damagedThisTick) continue;
                 if (hc.body.GetBuffCount(RoR2Content.Buffs.OnFire) == 3 + (uint)(stack * 2)) continue;
                 InflictDotInfo igniteEm = new InflictDotInfo {
                     victimObject = hc.body.gameObject,
@@ -100,7 +101,7 @@ namespace HDeMods.HDeItems.Tier1 {
                 };
                 StrengthenBurnUtils.CheckDotForUpgrade(body.inventory, ref igniteEm);
                 DotController.InflictDot(ref igniteEm);
-                mh.damagedThisTick = true;
+                hdh.damagedThisTick = true;
             }
         }
 
@@ -109,22 +110,6 @@ namespace HDeMods.HDeItems.Tier1 {
             if (!NetworkServer.active) return;
             igniteSphere.RpcSetPosition(transform.position);
             igniteSphere.RpcSetSize(Vector3.one * (totalDistance * 2));
-        }
-    }
-
-    public class MouthwashHelper : NetworkBehaviour, IOnTakeDamageServerReceiver {
-        public event Action<DamageReport> DamageServerEvent;
-        public bool damagedThisTick;
-        public void OnTakeDamageServer(DamageReport damageReport) {
-            DamageServerEvent?.Invoke(damageReport);
-        }
-        
-        public static void OnBodyAwakeGlobal(CharacterBody body) {
-            body.gameObject.AddComponent<MouthwashHelper>();
-        }
-
-        private void FixedUpdate() {
-            damagedThisTick = false;
         }
     }
 

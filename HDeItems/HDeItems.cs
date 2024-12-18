@@ -10,6 +10,7 @@ using BepInEx.Logging;
 using R2API.ContentManagement;
 using R2API.ScriptableObjects;
 using RoR2;
+using UnityEngine.Networking;
 
 namespace HDeMods.HDeItems {
     public static class ItemManager {
@@ -29,7 +30,24 @@ namespace HDeMods.HDeItems {
             pack = R2APIContentManager.ReserveSerializableContentPack();
             
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
+            CharacterBody.onBodyAwakeGlobal += HDeItemHelper.OnBodyAwakeGlobal;
             Expansion.Init();
+        }
+    }
+    
+    public class HDeItemHelper : NetworkBehaviour, IOnTakeDamageServerReceiver {
+        public event Action<DamageReport> DamageServerEvent;
+        [SyncVar]public bool damagedThisTick;
+        public void OnTakeDamageServer(DamageReport damageReport) {
+            DamageServerEvent?.Invoke(damageReport);
+        }
+        
+        public static void OnBodyAwakeGlobal(CharacterBody body) {
+            body.gameObject.AddComponent<HDeItemHelper>();
+        }
+
+        private void FixedUpdate() {
+            damagedThisTick = false;
         }
     }
 
