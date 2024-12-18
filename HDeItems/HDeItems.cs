@@ -11,6 +11,7 @@ using R2API.ContentManagement;
 using R2API.ScriptableObjects;
 using RoR2;
 using UnityEngine.Networking;
+using UnityEngine.Serialization;
 
 namespace HDeMods.HDeItems {
     public static class ItemManager {
@@ -37,13 +38,18 @@ namespace HDeMods.HDeItems {
     
     public class HDeItemHelper : NetworkBehaviour, IOnTakeDamageServerReceiver {
         public event Action<DamageReport> DamageServerEvent;
+        public CharacterBody body;
         [SyncVar]public bool damagedThisTick;
+        [SyncVar]public uint infusionBonus;
+        
+        
         public void OnTakeDamageServer(DamageReport damageReport) {
             DamageServerEvent?.Invoke(damageReport);
         }
         
         public static void OnBodyAwakeGlobal(CharacterBody body) {
-            body.gameObject.AddComponent<HDeItemHelper>();
+            HDeItemHelper temp = body.gameObject.AddComponent<HDeItemHelper>();
+            temp.body = body;
         }
 
         private void FixedUpdate() {
@@ -52,7 +58,7 @@ namespace HDeMods.HDeItems {
     }
 
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
-    public sealed class  HDeItem : Attribute {
+    public sealed class HDeItem : Attribute {
         internal static void InitItems(On.RoR2.WwiseIntegrationManager.orig_Init origInit) {
             origInit();
             

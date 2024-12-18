@@ -5,11 +5,13 @@ using RoR2;
 using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
+using BepInEx.Configuration;
 
 namespace HDeMods.HDeItems.Tier1 {
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     [SuppressMessage("ReSharper", "FieldCanBeMadeReadOnly.Global")]
     [HDeItem] public class Mouthwash : CharacterBody.ItemBehavior {
+        public static ConfigEntry<bool> Enabled { get; set; }
         public static ItemDef item;
         public static List<HurtBox> hurtBoxBuffer = new List<HurtBox>();
         public static SphereSearch searchMe = new SphereSearch();
@@ -17,12 +19,19 @@ namespace HDeMods.HDeItems.Tier1 {
         public static GameObject rangeDisplayPrefab;
 
         public static void HDeItem_Init() {
+            Enabled = Plugin.instance.Config.Bind<bool>(
+                "Items - Tier 1",
+                "Mouthwash",
+                true,
+                "Enables Blazing Mouthwash."
+                );
+            
+            if (!Enabled.Value) return;
             item = ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("HDe_MouthwashDef");
             if (item == null) {
                 Log.Error("Failed to load " + nameof(Mouthwash));
                 return;
             }
-            item.tier = ItemTier.Tier1;
             
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);

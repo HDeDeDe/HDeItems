@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1150290819
+CRC: 2696676382
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 50347b4a270c70a1c54f83d2a8722543
+    Hash: d4e389542a71286414a0d868ca594880
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8199de6e5482244189eb73a74f2dac2a
@@ -46,9 +46,14 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
 - Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/mdlFunnySphere.prefab
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
 - Assets/HDeItems/Tier1/Mouthwash/mdlBottle.obj
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
 - Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
