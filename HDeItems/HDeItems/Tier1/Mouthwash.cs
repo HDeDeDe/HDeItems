@@ -3,20 +3,18 @@ using R2API;
 
 namespace HDeMods.HDeItems.Tier1 {
     [HDeItem] public static class Mouthwash {
-        public static CustomItem item;
+        public static ItemDef item;
 
         public static void HDeItem_Init() {
-            item = new CustomItem(
-                ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("MouthwashDef"),
-                new [] {new ItemDisplayRule()});
-            
-            if (item.ItemDef == null) {
+            item = ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("MouthwashDef");
+            if (item == null) {
                 Log.Error("Failed to load " + nameof(Mouthwash));
                 return;
             }
-            item.ItemDef.tier = ItemTier.Tier1;
+            item.tier = ItemTier.Tier1;
             
-            ItemAPI.Add(item);
+            CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
+            ItemAPI.Add(customItem);
             Log.Debug("Successfully loaded " + nameof(Mouthwash));
         }
     }
