@@ -16,6 +16,7 @@
             <Link>CHANGELOG.md</Link>
         </Content>
         <Content Include="HDeItems.language" />
+        <Content Include="icon.png" />
         <Content Include="lib\ShaderSwapper.dll" />
         <Content Include="MouthwashingEntertainmentProductBig.png" />
         <Content Include="Mouthwash_transparent.png" />

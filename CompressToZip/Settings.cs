@@ -13,7 +13,7 @@ internal static class Settings {
     public const string readme = "../README.md";
 
     public const string icon =
-        "";
+        "../Resources/icon.png";
 
     public const string riskOfRain2Install =
         @"C:\Program Files (x86)\Steam\steamapps\common\Risk of Rain 2\Risk of Rain 2_Data\Managed\";
@@ -23,10 +23,10 @@ internal static class Settings {
         new FileInfo("../Resources/HDeItems.language")
     };
 
-    public const string manifestWebsiteUrl = "";
+    public const string manifestWebsiteUrl = "https://github.com/HDeDeDe/HDeItems";
 
     public const string manifestDescription =
-        "";
+        "Just some items I decided to make on a whim :)";
 
     public const string manifestDependencies = "[\n" +
                                                "\t\t\"bbepis-BepInExPack-5.4.2117\",\n" +
