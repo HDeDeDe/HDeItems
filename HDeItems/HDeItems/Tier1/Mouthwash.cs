@@ -57,7 +57,7 @@ namespace HDeMods.HDeItems.Tier1 {
         private void OnEnable() {
             Recalc();
             helper.DamageServerEvent += OnTakeDamageServer;
-            body.inventory.onInventoryChanged += Recalc;
+            body.inventory.onInventoryChanged += SetCalcDirty;
             active = true;
             if (!NetworkServer.active) return;
             GameObject temp = Instantiate(rangeDisplayPrefab);
@@ -69,7 +69,7 @@ namespace HDeMods.HDeItems.Tier1 {
             if (!active) return;
             active = false;
             helper.DamageServerEvent -= OnTakeDamageServer;
-            body.inventory.onInventoryChanged -= Recalc;
+            body.inventory.onInventoryChanged -= SetCalcDirty;
             if (!NetworkServer.active) return;
             NetworkServer.Destroy(igniteSphere.gameObject);
         }
@@ -106,7 +106,9 @@ namespace HDeMods.HDeItems.Tier1 {
         }
 
         private void FixedUpdate() {
-            if (body.statsDirty) Recalc();
+            if (body.statsDirty) calcDirty = true;
+            if (calcDirty) Recalc();
+            calcDirty = false;
             if (!NetworkServer.active) return;
             igniteSphere.RpcSetPosition(transform.position);
             igniteSphere.RpcSetSize(Vector3.one * (totalDistance * 2));
