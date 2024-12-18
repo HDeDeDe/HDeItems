@@ -3,8 +3,8 @@
     "HDE_EXPANSION_NAME": "HDeItems",
     "HDE_EXPANSION_DESCRIPTION": "Just some items I decided to make on a whim :)",
     "HDE_MOUTHWASH_NAME" : "Blazing Mouthwash",
-    "HDE_MOUTHWASH_PICKUP" : "IDK yet lmao.",
-    "HDE_MOUTHWASH_DESCRIPTION" : "It does something.",
+    "HDE_MOUTHWASH_PICKUP" : "Getting hit <style=cIsDamage>ignites</style> nearby enemies up to <style=cIsUtility>5 times</style> <style=cStack>(+2 per stack)</style>.",
+    "HDE_MOUTHWASH_DESCRIPTION" : "Getting hit <style=cIsDamage>ignites</style> enemies within <style=cIsDamage>10m</style> <style=cStack>(+2m per stack hyperbolically)</style> for <style=cIsDamage>50% damage</style> up to <style=cIsUtility>5 times</style> <style=cStack>(+2 per stack)</style>.",
     "HDE_MOUTHWASH_LORE" : "I hope this hurts."
   }
 }

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4082655897
+CRC: 2923039549
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 5d6cf994ec03e3eeab484df2d02792b0
+    Hash: f5f9c4acb9c1b4352b83a901fa528730
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 45932bb1ee2a8d1d90e1a99eafdffa2a
+    Hash: 0837a4a558941c5548ca1aa926b2eb19
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,23 +26,36 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
+- Class: 114
   Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 488236779, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkHash128
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
+- Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
 - Assets/HDeItems/Tier1/Mouthwash/mdlBottle.obj
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
 - Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
+- Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
+- Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 - Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
+- Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashDef.asset
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
+- Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
 Dependencies: []
