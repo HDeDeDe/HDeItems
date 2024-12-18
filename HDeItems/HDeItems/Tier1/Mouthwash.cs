@@ -2,8 +2,7 @@ using RoR2;
 using R2API;
 
 namespace HDeMods.HDeItems.Tier1 {
-    [HDeItem]
-    public static class Mouthwash {
+    [HDeItem] public static class Mouthwash {
         public static CustomItem item;
 
         public static void HDeItem_Init() {
