@@ -1,0 +1,10 @@
+{
+  "strings" : {
+    "HDE_EXPANSION_NAME": "HDeItems",
+    "HDE_EXPANSION_DESCRIPTION": "Just some items I decided to make on a whim :)",
+    "HDE_MOUTHWASH_NAME" : "Blazing Mouthwash",
+    "HDE_MOUTHWASH_PICKUP" : "IDK yet lmao.",
+    "HDE_MOUTHWASH_DESCRIPTION" : "It does something.",
+    "HDE_MOUTHWASH_LORE" : "I hope this hurts."
+  }
+}

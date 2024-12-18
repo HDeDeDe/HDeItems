@@ -1,0 +1,23 @@
+﻿<Project>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <OutputPath>bin\Debug\</OutputPath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <OutputPath>bin\Release\</OutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <Content Include="..\.gitignore">
+            <Link>.gitignore</Link>
+        </Content>
+        <Content Include="..\README.md">
+            <Link>README.md</Link>
+        </Content>
+        <Content Include="..\CHANGELOG.md">
+            <Link>CHANGELOG.md</Link>
+        </Content>
+        <Content Include="HDeItems.language" />
+        <Content Include="lib\ShaderSwapper.dll" />
+        <Content Include="MouthwashingEntertainmentProductBig.png" />
+        <Content Include="Mouthwash_transparent.png" />
+    </ItemGroup>
+</Project>

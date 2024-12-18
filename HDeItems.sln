@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HDeItems", "HDeItems\HDeItems.csproj", "{4DB6EE85-256D-43EC-A8B3-BE67C707A4CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{66D10F19-561A-4EB7-AA3D-4A83A343A8F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompressToZip", "CompressToZip\CompressToZip.csproj", "{40C253DC-CAA3-484A-923C-35D96674BD12}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HDeItemsUnity", "HDeItemsUnity", "{AD1465F8-B53E-482B-9C7F-A6D7535EC1AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DB6EE85-256D-43EC-A8B3-BE67C707A4CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB6EE85-256D-43EC-A8B3-BE67C707A4CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB6EE85-256D-43EC-A8B3-BE67C707A4CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB6EE85-256D-43EC-A8B3-BE67C707A4CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66D10F19-561A-4EB7-AA3D-4A83A343A8F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D10F19-561A-4EB7-AA3D-4A83A343A8F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D10F19-561A-4EB7-AA3D-4A83A343A8F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D10F19-561A-4EB7-AA3D-4A83A343A8F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40C253DC-CAA3-484A-923C-35D96674BD12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40C253DC-CAA3-484A-923C-35D96674BD12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40C253DC-CAA3-484A-923C-35D96674BD12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40C253DC-CAA3-484A-923C-35D96674BD12}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
