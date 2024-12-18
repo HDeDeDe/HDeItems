@@ -17,7 +17,7 @@ namespace HDeMods.HDeItems.Tier1 {
         public static GameObject rangeDisplayPrefab;
 
         public static void HDeItem_Init() {
-            item = ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("MouthwashDef");
+            item = ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("HDe_MouthwashDef");
             if (item == null) {
                 Log.Error("Failed to load " + nameof(Mouthwash));
                 return;

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2923039549
+CRC: 1150290819
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f5f9c4acb9c1b4352b83a901fa528730
+    Hash: 50347b4a270c70a1c54f83d2a8722543
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 0837a4a558941c5548ca1aa926b2eb19
+    Hash: 8199de6e5482244189eb73a74f2dac2a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -26,6 +26,8 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 488236779, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
 - Class: 114
   Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -33,8 +35,6 @@ ClassTypes:
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
-  Script: {fileID: 488236779, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 213
@@ -54,7 +54,7 @@ Assets:
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 - Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
 - Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
-- Assets/HDeItems/Tier1/Mouthwash/MouthwashDef.asset
+- Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
