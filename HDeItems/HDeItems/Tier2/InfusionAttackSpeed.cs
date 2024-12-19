@@ -60,7 +60,7 @@ namespace HDeMods.HDeItems.Tier2 {
         }
 
         public static void RecalculateStats(CharacterBody body, RecalculateStatsAPI.StatHookEventArgs args) {
-            Inventory inventory = body.master.inventory;
+            Inventory inventory = body.inventory;
             if (!inventory) return;
             int infCount = inventory.GetItemCount(item);
             if (infCount <= 0) return;
