@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3700500716
+CRC: 2170847124
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d8ca8d3a5096fa9ec16d329265ea7c73
+    Hash: 27a6338be3dfeaad31f6b4691c5af1c3
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8199de6e5482244189eb73a74f2dac2a
+    Hash: d7206cb4b20296db643b77188283b5af
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -30,6 +30,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
 - Class: 114
+  Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -46,7 +48,6 @@ SerializeReferenceClassIdentifiers:
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
 - Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/mdlFunnySphere.prefab
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
 - Assets/HDeItems/Tier1/Mouthwash/mdlBottle.obj
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
@@ -54,6 +55,7 @@ Assets:
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
 - Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
@@ -63,4 +65,7 @@ Assets:
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_bdInfusionAttackSpeed.asset
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.blend
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
 Dependencies: []

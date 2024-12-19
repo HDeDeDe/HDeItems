@@ -8,6 +8,7 @@ namespace HDeMods.HDeItems.Tier2 {
     [HDeItem] public static class InfusionAttackSpeed {
         public static ConfigEntry<bool> Enabled { get; set; }
         public static ItemDef item;
+        public static BuffDef buff;
         public static bool orbAdded;
         
         public static void HDeItem_Init() {
@@ -34,6 +35,9 @@ namespace HDeMods.HDeItems.Tier2 {
             
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);
+            
+            buff = ItemManager.HDeItemsBundle.LoadAsset<BuffDef>("HDe_bdInfusionAttackSpeed");
+            ContentAddition.AddBuffDef(buff);
             
             GlobalEventManager.onCharacterDeathGlobal += OnCharacterDeath;
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStats;
@@ -66,6 +70,7 @@ namespace HDeMods.HDeItems.Tier2 {
             if (infCount <= 0) return;
             HDeItemHelper hdeHelper = body.gameObject.GetComponent<HDeItemHelper>();
             args.attackSpeedMultAdd += 0.01f * hdeHelper.infusionBonus;
+            body.SetBuffCount(buff.buffIndex, (int)hdeHelper.infusionBonus);
         }
         
         public static void AddInfusionBonus(this HDeItemHelper helper, uint value) {

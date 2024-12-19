@@ -20,5 +20,6 @@
         <Content Include="lib\ShaderSwapper.dll" />
         <Content Include="MouthwashingEntertainmentProductBig.png" />
         <Content Include="Mouthwash_transparent.png" />
+        <Content Include="powder.blend" />
     </ItemGroup>
 </Project>
