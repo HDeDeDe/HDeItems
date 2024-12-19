@@ -11,7 +11,7 @@ using R2API.ContentManagement;
 using R2API.ScriptableObjects;
 using RoR2;
 using UnityEngine.Networking;
-using UnityEngine.Serialization;
+using R2API;
 
 namespace HDeMods.HDeItems {
     public static class ItemManager {
@@ -33,6 +33,15 @@ namespace HDeMods.HDeItems {
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
             CharacterBody.onBodyAwakeGlobal += HDeItemHelper.OnBodyAwakeGlobal;
             Expansion.Init();
+
+            if (OrbAPI.AddOrb<Tier2.InfusionAttackSpeedOrb>()) Tier2.InfusionAttackSpeed.orbAdded = true;
+            
+            if (!Options.RoO.Enabled) return;
+            Options.RoO.SetSprite(HDeItemsBundle.LoadAsset<Sprite>("texHDeExpansionIcon"));
+            Options.RoO.SetDescriptionToken("HDE_EXPANSION_DESCRIPTION");
+            Options.RoO.AddButton("Reset to Default", "Items - Tier 1", Options.RoO.ResetToDefault);
+            Options.RoO.AddButton("Reset to Default", "Items - Tier 2", Options.RoO.ResetToDefault);
+            Options.RoO.AddButton("Reset to Default", "Items - Tier 3", Options.RoO.ResetToDefault);
         }
     }
     

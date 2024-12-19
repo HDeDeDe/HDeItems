@@ -25,6 +25,7 @@ namespace HDeMods.HDeItems.Tier1 {
                 true,
                 "Enables Blazing Mouthwash."
                 );
+            if (Options.RoO.Enabled) Options.RoO.AddCheck(Enabled, true);
             
             if (!Enabled.Value) return;
             item = ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("HDe_MouthwashDef");

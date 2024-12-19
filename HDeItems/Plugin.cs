@@ -4,11 +4,14 @@ using R2API;
 
 namespace HDeMods.HDeItems {
     [BepInDependency(ItemAPI.PluginGUID)]
+    [BepInDependency(PrefabAPI.PluginGUID)]
+    [BepInDependency(RecalculateStatsAPI.PluginGUID)]
+    [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
     public sealed class Plugin : BaseUnityPlugin {
-        public const string PluginGUID = PluginAuthor + "." + PluginName;
+        public const string PluginGUID = "com." + PluginAuthor + "." + PluginName;
         public const string PluginAuthor = "HDeDeDe";
         public const string PluginName = "HDeItems";
         public const string PluginVersion = "0.0.1";
@@ -21,6 +24,7 @@ namespace HDeMods.HDeItems {
                 return;
             }
             instance = this;
+            if (Options.RoO.Enabled) Options.RoO.Init(PluginGUID, PluginName, Log.Error, Log.Debug);
             HDeItems.Log.Init(Logger);
             HDeItems.ItemManager.Startup();
         }

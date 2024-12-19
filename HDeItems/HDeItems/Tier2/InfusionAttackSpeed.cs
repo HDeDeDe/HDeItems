@@ -8,6 +8,7 @@ namespace HDeMods.HDeItems.Tier2 {
     [HDeItem] public static class InfusionAttackSpeed {
         public static ConfigEntry<bool> Enabled { get; set; }
         public static ItemDef item;
+        public static bool orbAdded;
         
         public static void HDeItem_Init() {
             Enabled = Plugin.instance.Config.Bind<bool>(
@@ -16,8 +17,14 @@ namespace HDeMods.HDeItems.Tier2 {
                 true,
                 "Enables 5 gram Crack."
             );
-            
+            if (Options.RoO.Enabled) Options.RoO.AddCheck(Enabled, true);
             if (!Enabled.Value) return;
+            
+            if (!orbAdded) {
+                Log.Error("Failed to load " + nameof(InfusionAttackSpeed));
+                return;
+            }
+            
             item = ItemManager.HDeItemsBundle.LoadAsset<ItemDef>("HDe_InfusionAttackSpeedDef");
             if (item == null) {
                 Log.Error("Failed to load " + nameof(InfusionAttackSpeed));
