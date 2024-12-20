@@ -6,7 +6,6 @@ using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
 using BepInEx.Configuration;
-using UnityEngine.Serialization;
 
 namespace HDeMods.HDeItems.Tier1 {
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
