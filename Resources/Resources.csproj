@@ -16,11 +16,16 @@
             <Link>CHANGELOG.md</Link>
         </Content>
         <Content Include="Bile_Render.png" />
+        <Content Include="BoomerBig.png" />
+        <Content Include="BoomerEquipment.png" />
+        <Content Include="CasetteBig.png" />
+        <Content Include="CrackBig.png" />
         <Content Include="HDeItems.language" />
         <Content Include="icon.png" />
         <Content Include="lib\ShaderSwapper.dll" />
         <Content Include="MouthwashingEntertainmentProductBig.png" />
         <Content Include="Mouthwash_transparent.png" />
+        <Content Include="Music_Casset_Render.png" />
         <Content Include="powder.blend" />
     </ItemGroup>
 </Project>
