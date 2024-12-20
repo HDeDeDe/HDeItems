@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2170847124
+CRC: 2114658954
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 27a6338be3dfeaad31f6b4691c5af1c3
+    Hash: 4793f2828e6d867789651ae8a5b2b482
   TypeTreeHash:
     serializedVersion: 2
-    Hash: d7206cb4b20296db643b77188283b5af
+    Hash: 8199de6e5482244189eb73a74f2dac2a
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -30,8 +30,6 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
 - Class: 114
-  Script: {fileID: -1783169300, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
-- Class: 114
   Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -47,25 +45,32 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
-- Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
-- Assets/HDeItems/Tier1/Mouthwash/mdlBottle.obj
-- Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
-- Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
-- Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
-- Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
-- Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
-- Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
-- Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
-- Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
-- Assets/HDeItems/Expansion/texHDeExpansionIcon.png
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
+- Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_bdInfusionAttackSpeed.asset
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.blend
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.fbx
+- Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
+- Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
+- Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
+- Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask.png
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
+- Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
+- Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
+- Assets/HDeItems/Tier2/AggroUp/HDe_AggroUpDef.asset
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask.mat
+- Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
+- Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
+- Assets/HDeItems/Tier2/AggroUp/HDe_AggroUp.prefab
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
+- Assets/HDeItems/Tier2/AggroUp/boomer_bile.fbx
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
+- Assets/HDeItems/Tier1/Mouthwash/Bottle.fbx
+- Assets/HDeItems/Expansion/texHDeExpansionIcon.png
+- Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 Dependencies: []

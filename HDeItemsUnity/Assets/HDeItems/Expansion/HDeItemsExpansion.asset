@@ -16,6 +16,6 @@ MonoBehaviour:
   requiredEntitlement: {fileID: 0}
   nameToken: HDE_EXPANSION_NAME
   descriptionToken: HDE_EXPANSION_DESCRIPTION
-  iconSprite: {fileID: 21300000, guid: 0ae5e53b5f1aeee4996e8164d1295121, type: 3}
-  disabledIconSprite: {fileID: 21300000, guid: 0ae5e53b5f1aeee4996e8164d1295121, type: 3}
+  iconSprite: {fileID: 21300000, guid: 390893905b23d6f4193834296c20dd83, type: 3}
+  disabledIconSprite: {fileID: 0}
   runBehaviorPrefab: {fileID: 0}

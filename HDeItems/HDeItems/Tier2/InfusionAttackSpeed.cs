@@ -2,6 +2,7 @@ using BepInEx.Configuration;
 using R2API;
 using RoR2;
 using RoR2.Orbs;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace HDeMods.HDeItems.Tier2 {
@@ -35,8 +36,13 @@ namespace HDeMods.HDeItems.Tier2 {
             
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);
-            
-            buff = ItemManager.HDeItemsBundle.LoadAsset<BuffDef>("HDe_bdInfusionAttackSpeed");
+
+            buff = ScriptableObject.CreateInstance<BuffDef>();
+            buff.name = "HDe_bdInfusionAttackSpeed";
+            buff.canStack = true;
+            buff.isCooldown = true;
+            buff.ignoreGrowthNectar = true;
+            buff.iconSprite = ItemManager.HDeItemsBundle.LoadAsset<Sprite>("texBdInfusionAttackSpeed");
             ContentAddition.AddBuffDef(buff);
             
             GlobalEventManager.onCharacterDeathGlobal += OnCharacterDeath;

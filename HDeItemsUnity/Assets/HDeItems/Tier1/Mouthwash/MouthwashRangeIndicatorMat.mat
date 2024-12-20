@@ -8,10 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MouthwashRangeIndicatorMat
-  m_Shader: {fileID: 4800000, guid: 31773e352b5b06f488a16329a14ffa28, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2c8f41c5809fe9f41a4aef83a716329d, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - USE_CLOUDS
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -26,11 +25,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cloud1Tex:
-        m_Texture: {fileID: 2800000, guid: 7f999c94afdbca44a9d66190fe5cf152, type: 3}
+        m_Texture: {fileID: 2800000, guid: a058fadfb3b6e554190ccc24a39f6e1a, type: 3}
         m_Scale: {x: 18, y: 18}
         m_Offset: {x: 0, y: 0}
     - _Cloud2Tex:
-        m_Texture: {fileID: 2800000, guid: 0965a907619fdd646bc9b99f6d821cd3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 44a9da067e7fe274f8d92c5017455bd6, type: 3}
         m_Scale: {x: 24, y: 24}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -50,12 +49,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 7f999c94afdbca44a9d66190fe5cf152, type: 3}
+        m_Texture: {fileID: 2800000, guid: a058fadfb3b6e554190ccc24a39f6e1a, type: 3}
         m_Scale: {x: 24, y: 24}
-        m_Offset: {x: 0, y: 0}
-    - _MaskTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -65,63 +60,37 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _OutlineMap:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _RemapTex:
-        m_Texture: {fileID: 2800000, guid: 15bd710c2b6025349bd376eeaf920533, type: 3}
+        m_Texture: {fileID: 2800000, guid: 82385f265bbaa204087fcc0aacf50eb8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaBias: 0
     - _AlphaBoost: 1.5
     - _Boost: 0.16
     - _BumpScale: 1
-    - _CalcTextureAlphaOn: 0
-    - _CloudOffsetOn: 0
-    - _CloudsOn: 1
     - _Cull: 0
     - _Cutoff: 0.5
-    - _DepthOffset: 0
     - _DetailNormalMapScale: 1
-    - _DisableRemapOn: 0
-    - _DistanceModulationMagnitude: 0.5
-    - _DistanceModulationOn: 0
-    - _DistortionStrength: 0.1
     - _DstBlend: 0
     - _DstBlendFloat: 1
     - _ExternalAlpha: 1
-    - _Fade: 1
-    - _FadeCloseDistance: 0.5
-    - _FadeCloseOn: 0
     - _FadeFromVertexColorsOn: 0
-    - _FarFadeOneDistance: 200000
-    - _FarFadeZeroDistance: 250000
-    - _FresnelOn: 0
-    - _FresnelPower: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _InternalSimpleBlendMode: 0
     - _IntersectionStrength: 0.4
     - _InvFade: 3.45
-    - _Magnitude: 0.05
     - _Metallic: 0
     - _Mode: 0
-    - _NearFadeOneDistance: 5
-    - _NearFadeZeroDistance: 0
     - _OcclusionStrength: 1
-    - _OffsetAmount: 0
     - _Parallax: 0.02
     - _RimPower: 1.9
     - _RimStrength: 0.33
-    - _SkyboxOnly: 0
     - _SmoothnessTextureChannel: 0
     - _SoftPower: 1
     - _SpecularHighlights: 1
@@ -129,11 +98,6 @@ Material:
     - _SrcBlendFloat: 1
     - _TriplanarOn: 0
     - _UVSec: 0
-    - _UseUV1On: 0
-    - _VertexAlphaOn: 0
-    - _VertexColorOn: 0
-    - _VertexOffsetOn: 0
-    - _ZTest: 4
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
