@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: HDe_AggroUpDef
+  m_EditorClassIdentifier: 
+  deprecatedTier: 1
+  _itemTierDef: {fileID: 0}
+  nameToken: HDE_AGGROUP_NAME
+  pickupToken: HDE_AGGROUP_PICKUP
+  descriptionToken: HDE_AGGROUP_DESCRIPTION
+  loreToken: HDE_AGGROUP_LORE
+  unlockableDef: {fileID: 0}
+  pickupModelPrefab: {fileID: 304217051024862382, guid: f027cf890accd8642b6552cc166fb988, type: 3}
+  pickupIconSprite: {fileID: 21300000, guid: 9924de9fa8ffab84eba9b60811c3d568, type: 3}
+  isConsumed: 0
+  hidden: 0
+  canRemove: 1
+  tags: 03000000040000000b000000
+  requiredExpansion: {fileID: 11400000, guid: e729ee441246bcc4985eaa43e69bcf8a, type: 2}

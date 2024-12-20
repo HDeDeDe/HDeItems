@@ -33,6 +33,7 @@ namespace HDeMods.HDeItems {
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
             CharacterBody.onBodyAwakeGlobal += BodyData.OnBodyAwakeGlobal;
             Expansion.Init();
+            AggroManager.Init();
 
             if (OrbAPI.AddOrb<Tier2.InfusionAttackSpeedOrb>()) Tier2.InfusionAttackSpeed.orbAdded = true;
             
@@ -50,8 +51,10 @@ namespace HDeMods.HDeItems {
         public CharacterBody body; 
         [SyncVar]public bool damagedThisTick;
         [SyncVar]public uint infusionBonus;
-        [SyncVar]public short agro;
-        
+        [SyncVar]public int aggroUp;
+        [SyncVar]public int aggroDown;
+        public int Aggro => aggroUp - aggroDown;
+
         public void OnTakeDamageServer(DamageReport damageReport) {
             DamageServerEvent?.Invoke(damageReport);
         }

@@ -37,7 +37,13 @@
     "HDE_INFUSIONATTACKSPEED_LORE" : "Team Fortress 2\nLevel 1 Crack",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.INFUSIONATTACKSPEED.CHECKBOX.NAME" : "5 gram Crack",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.INFUSIONATTACKSPEED.CHECKBOX.DESCRIPTION" : "Enables 5 gram Crack. Default value is true. Requires restart.",
-    
+
+    "HDE_AGGROUP_NAME" : "Boomer Bile",
+    "HDE_AGGROUP_PICKUP" : "Increase aggro.",
+    "HDE_AGGROUP_DESCRIPTION" : "Increase aggro.",
+    "HDE_AGGROUP_LORE" : "Boomer Bile from Left 4 Dead 2",
+    "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGROUP.CHECKBOX.NAME" : "Boomer Bile",
+    "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGROUP.CHECKBOX.DESCRIPTION" : "Enables Boomer Bile. Default value is true. Requires restart.",
     
     "HDE_FUNNY_LITTLE_GUY" : "This is just here so I can be lazy and have commas on all of the things."
   }

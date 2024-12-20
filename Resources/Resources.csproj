@@ -15,6 +15,7 @@
         <Content Include="..\CHANGELOG.md">
             <Link>CHANGELOG.md</Link>
         </Content>
+        <Content Include="Bile_Render.png" />
         <Content Include="HDeItems.language" />
         <Content Include="icon.png" />
         <Content Include="lib\ShaderSwapper.dll" />
