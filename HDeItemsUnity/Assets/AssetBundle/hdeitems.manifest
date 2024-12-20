@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 2114658954
+CRC: 1224177849
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 4793f2828e6d867789651ae8a5b2b482
+    Hash: 03f72ceb6ba9ae8a67424c9e3f95ad08
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8199de6e5482244189eb73a74f2dac2a
@@ -48,14 +48,19 @@ Assets:
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
 - Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
+- Assets/HDeItems/Tier2/AggroDown/texHDeAggroDown.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.fbx
+- Assets/HDeItems/Tier2/AggroDown/RES_8track.fbx
+- Assets/HDeItems/Tier2/AggroDown/HDe_AggroDown.prefab
 - Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
+- Assets/HDeItems/Tier2/AggroDown/HDe_AggroDownDef.asset
 - Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
 - Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
 - Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask.png
+- Assets/HDeItems/Tier2/AggroDown/8trackTape.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
@@ -65,6 +70,7 @@ Assets:
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
 - Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
+- Assets/HDeItems/Tier2/AggroDown/8trackTape.mat
 - Assets/HDeItems/Tier2/AggroUp/HDe_AggroUp.prefab
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab

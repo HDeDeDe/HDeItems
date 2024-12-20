@@ -3,7 +3,7 @@ using RoR2;
 using R2API;
 
 namespace HDeMods.HDeItems.Tier2 {
-    /*[HDeItem] public static class AggroDown {
+    [HDeItem] public static class AggroDown {
         public static ConfigEntry<bool> Enabled { get; set; }
         public static ItemDef item;
         
@@ -12,7 +12,7 @@ namespace HDeMods.HDeItems.Tier2 {
                 "Items - Tier 2",
                 "AggroDown",
                 true,
-                "Enables Eule MixTape."
+                "Enables Music Cassette."
             );
             if (Options.RoO.Enabled) Options.RoO.AddCheck(Enabled, true);
             if (!Enabled.Value) return;
@@ -22,6 +22,7 @@ namespace HDeMods.HDeItems.Tier2 {
                 Log.Error("Failed to load " + nameof(AggroDown));
                 return;
             }
+            item.tier = ItemTier.Tier2;
             
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);
@@ -36,5 +37,5 @@ namespace HDeMods.HDeItems.Tier2 {
             if (!bodyData) return;
             bodyData.aggroDown = inventory.GetItemCount(item);
         }
-    }*/
+    }
 }

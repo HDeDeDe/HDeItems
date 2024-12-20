@@ -44,6 +44,13 @@
     "HDE_AGGROUP_LORE" : "Boomer Bile from Left 4 Dead 2",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGROUP.CHECKBOX.NAME" : "Boomer Bile",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGROUP.CHECKBOX.DESCRIPTION" : "Enables Boomer Bile. Default value is true. Requires restart.",
+
+    "HDE_AGGRODOWN_NAME" : "Music Cassette",
+    "HDE_AGGRODOWN_PICKUP" : "Decrease aggro.",
+    "HDE_AGGRODOWN_DESCRIPTION" : "Decrease aggro.",
+    "HDE_AGGRODOWN_LORE" : "Music Cassette from SIGNALIS. Used to keep Eule units stable.",
+    "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGRODOWN.CHECKBOX.NAME" : "Music Cassette",
+    "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGRODOWN.CHECKBOX.DESCRIPTION" : "Enables Music Cassette. Default value is true. Requires restart.",
     
     "HDE_FUNNY_LITTLE_GUY" : "This is just here so I can be lazy and have commas on all of the things."
   }
