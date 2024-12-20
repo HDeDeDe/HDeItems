@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1934962933
+CRC: 4233934900
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: aee5c0d9d950a63a0f1283e956cefa20
+    Hash: cc786e260f704040e5c24190241d76ed
   TypeTreeHash:
     serializedVersion: 2
     Hash: 8199de6e5482244189eb73a74f2dac2a
@@ -50,12 +50,14 @@ Assets:
 - Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
 - Assets/HDeItems/Tier2/AggroDown/texHDeAggroDown.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
+- Assets/HDeItems/Expansion/HDeItemsExpansionSots.asset
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.fbx
 - Assets/HDeItems/Tier2/AggroDown/RES_8track.fbx
 - Assets/HDeItems/Tier2/AggroDown/HDe_AggroDown.prefab
 - Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
 - Assets/HDeItems/Tier2/AggroDown/HDe_AggroDownDef.asset
+- Assets/HDeItems/Expansion/HDeItemsExpansionSotv.asset
 - Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
 - Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
 - Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
