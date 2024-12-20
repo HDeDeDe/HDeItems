@@ -6,6 +6,7 @@ using R2API;
 using UnityEngine;
 using UnityEngine.Networking;
 using BepInEx.Configuration;
+using UnityEngine.Serialization;
 
 namespace HDeMods.HDeItems.Tier1 {
     [SuppressMessage("ReSharper", "MemberCanBePrivate.Global")]
@@ -51,8 +52,8 @@ namespace HDeMods.HDeItems.Tier1 {
         }
         
         public float totalDistance;
-        public MouthwashRangeDisplay igniteSphere;
-        public HDeItemHelper helper;
+        public MouthwashRangeDisplay igniteSphere; 
+        public BodyData bodyData;
         public bool active;
         public bool calcDirty;
 
@@ -60,13 +61,13 @@ namespace HDeMods.HDeItems.Tier1 {
         public void Recalc() => totalDistance = baseDistance + ((float)Math.Tanh((double)(stack - 1) / 20) * 45);
 
         private void Awake() {
-            helper = GetComponent<HDeItemHelper>();
+            bodyData = GetComponent<BodyData>();
             enabled = false;
         }
 
         private void OnEnable() {
             Recalc();
-            helper.DamageServerEvent += OnTakeDamageServer;
+            bodyData.DamageServerEvent += OnTakeDamageServer;
             body.inventory.onInventoryChanged += SetCalcDirty;
             active = true;
             if (!NetworkServer.active) return;
@@ -78,7 +79,7 @@ namespace HDeMods.HDeItems.Tier1 {
         private void OnDisable() {
             if (!active) return;
             active = false;
-            helper.DamageServerEvent -= OnTakeDamageServer;
+            bodyData.DamageServerEvent -= OnTakeDamageServer;
             body.inventory.onInventoryChanged -= SetCalcDirty;
             if (!NetworkServer.active) return;
             NetworkServer.Destroy(igniteSphere.gameObject);
@@ -97,8 +98,8 @@ namespace HDeMods.HDeItems.Tier1 {
             foreach (HurtBox box in hurtBoxBuffer) {
                 HealthComponent hc = box.healthComponent;
                 if (!hc) continue;
-                HDeItemHelper hdh = hc.GetComponent<HDeItemHelper>();
-                if (hdh.damagedThisTick) continue;
+                BodyData bd = hc.GetComponent<BodyData>();
+                if (bd.damagedThisTick) continue;
                 if (hc.body.GetBuffCount(RoR2Content.Buffs.OnFire) == 3 + (uint)(stack * 2)) continue;
                 InflictDotInfo igniteEm = new InflictDotInfo {
                     victimObject = hc.body.gameObject,
@@ -111,7 +112,7 @@ namespace HDeMods.HDeItems.Tier1 {
                 };
                 StrengthenBurnUtils.CheckDotForUpgrade(body.inventory, ref igniteEm);
                 DotController.InflictDot(ref igniteEm);
-                hdh.damagedThisTick = true;
+                bd.damagedThisTick = true;
             }
         }
 

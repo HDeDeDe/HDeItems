@@ -31,7 +31,7 @@ namespace HDeMods.HDeItems {
             pack = R2APIContentManager.ReserveSerializableContentPack();
             
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
-            CharacterBody.onBodyAwakeGlobal += HDeItemHelper.OnBodyAwakeGlobal;
+            CharacterBody.onBodyAwakeGlobal += BodyData.OnBodyAwakeGlobal;
             Expansion.Init();
 
             if (OrbAPI.AddOrb<Tier2.InfusionAttackSpeedOrb>()) Tier2.InfusionAttackSpeed.orbAdded = true;
@@ -45,19 +45,19 @@ namespace HDeMods.HDeItems {
         }
     }
     
-    public class HDeItemHelper : NetworkBehaviour, IOnTakeDamageServerReceiver {
+    public class BodyData : NetworkBehaviour, IOnTakeDamageServerReceiver {
         public event Action<DamageReport> DamageServerEvent;
-        public CharacterBody body;
+        public CharacterBody body; 
         [SyncVar]public bool damagedThisTick;
         [SyncVar]public uint infusionBonus;
-        
+        [SyncVar]public short agro;
         
         public void OnTakeDamageServer(DamageReport damageReport) {
             DamageServerEvent?.Invoke(damageReport);
         }
         
         public static void OnBodyAwakeGlobal(CharacterBody body) {
-            HDeItemHelper temp = body.gameObject.AddComponent<HDeItemHelper>();
+            BodyData temp = body.gameObject.AddComponent<BodyData>();
             temp.body = body;
         }
 

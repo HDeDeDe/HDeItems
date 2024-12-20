@@ -52,8 +52,8 @@ namespace HDeMods.HDeItems.Tier2 {
             if (!inventory) return;
             int infCount = inventory.GetItemCount(item);
             if (infCount <= 0) return;
-            HDeItemHelper hdeHelper = body.GetComponent<HDeItemHelper>();
-            if (hdeHelper.infusionBonus >= (ulong)(infCount * 100)) return;
+            BodyData bodyData = body.GetComponent<BodyData>();
+            if (bodyData.infusionBonus >= (ulong)(infCount * 100)) return;
             
             InfusionAttackSpeedOrb orbMe = new InfusionAttackSpeedOrb {
                 origin = report.victimBody.transform.position,
@@ -68,26 +68,26 @@ namespace HDeMods.HDeItems.Tier2 {
             if (!inventory) return;
             int infCount = inventory.GetItemCount(item);
             if (infCount <= 0) return;
-            HDeItemHelper hdeHelper = body.gameObject.GetComponent<HDeItemHelper>();
-            args.attackSpeedMultAdd += 0.01f * hdeHelper.infusionBonus;
-            body.SetBuffCount(buff.buffIndex, (int)hdeHelper.infusionBonus);
+            BodyData bodyData = body.gameObject.GetComponent<BodyData>();
+            args.attackSpeedMultAdd += 0.01f * bodyData.infusionBonus;
+            body.SetBuffCount(buff.buffIndex, (int)bodyData.infusionBonus);
         }
         
-        public static void AddInfusionBonus(this HDeItemHelper helper, uint value) {
+        public static void AddInfusionBonus(this BodyData bodyData, uint value) {
             if (!NetworkServer.active) {
                 Log.Warning("InfusionAttackSpeed.AddInfusionBonus(uint) called on client.");
                 return;
             }
             if (value == 0) return;
-            helper.infusionBonus += value;
-            helper.body.statsDirty = true;
+            bodyData.infusionBonus += value;
+            bodyData.body.statsDirty = true;
         }
     }
 
     public class InfusionAttackSpeedOrb : Orb {
         private const float speed = 30f;
         public int attackSpeedValue;
-        private HDeItemHelper m_targetHelper;
+        private BodyData m_targetBodyData;
         
         public override void Begin() {
             duration = distanceToTarget / speed;
@@ -104,20 +104,20 @@ namespace HDeMods.HDeItems.Tier2 {
                 Log.Warning("No character body found");
                 return;
             }
-            HDeItemHelper helper = characterBody.GetComponent<HDeItemHelper>();
-            if (!helper) {
-                Log.Warning("Could not aquire item helper.");
+            BodyData bodyData = characterBody.GetComponent<BodyData>();
+            if (!bodyData) {
+                Log.Warning("Could not acquire body data.");
                 return;
             }
-            m_targetHelper = helper;
+            m_targetBodyData = bodyData;
         }
 
         public override void OnArrival() {
-            if (!m_targetHelper) {
-                Log.Warning("No item helper to apply to");
+            if (!m_targetBodyData) {
+                Log.Warning("No body data to apply to");
                 return;
             }
-            m_targetHelper.AddInfusionBonus((uint)attackSpeedValue);
+            m_targetBodyData.AddInfusionBonus((uint)attackSpeedValue);
         }
     }
 }
