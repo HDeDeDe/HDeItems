@@ -3,6 +3,8 @@ using System.Diagnostics;
 
 //---------------------------------------------------Program------------------------------------------------------------
 
+Settings.Delegates();
+
 #if DEBUG
 const string targetFile = "../" + Settings.pluginName + "/bin/" + Settings.pluginName + "_debug.zip";
 const string dllPath = "../" + Settings.pluginName + "/bin/Debug/netstandard2.1/";
