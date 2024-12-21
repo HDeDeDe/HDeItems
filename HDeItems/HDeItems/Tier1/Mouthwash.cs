@@ -103,11 +103,10 @@ namespace HDeMods.HDeItems.Tier1 {
                 InflictDotInfo igniteEm = new InflictDotInfo {
                     victimObject = hc.body.gameObject,
                     attackerObject = body.gameObject,
-                    totalDamage = ((stack * 0.25f) + 0.75f) * body.damage,
+                    totalDamage = body.damage,
                     dotIndex = DotController.DotIndex.Burn,
-                    damageMultiplier = 1f,
-                    maxStacksFromAttacker = 3 + (uint)(stack * 2),
-                    duration = 4f
+                    damageMultiplier = 0.75f + (stack * 0.25f),
+                    maxStacksFromAttacker = 3 + (uint)(stack * 2)
                 };
                 StrengthenBurnUtils.CheckDotForUpgrade(body.inventory, ref igniteEm);
                 DotController.InflictDot(ref igniteEm);
