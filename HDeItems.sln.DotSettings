@@ -13,7 +13,7 @@ using R2API;
 using BepInEx.Configuration;
 
 namespace $NAMESPACE$ {
-    [HDeItem] public static class $CLASS$ {
+    [HDeItem] public class $CLASS$ {
         public static ConfigEntry&lt;bool&gt; Enabled { get; set; }
         public static ItemDef item;
         
