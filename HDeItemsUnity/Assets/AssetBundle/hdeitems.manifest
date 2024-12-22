@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4233934900
+CRC: 1882027963
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cc786e260f704040e5c24190241d76ed
+    Hash: 21eda5a2d222afb76d5f35a79c1c54cd
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 8199de6e5482244189eb73a74f2dac2a
+    Hash: ad57158a98d8230f55a2942a603846f7
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -30,6 +30,10 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
 - Class: 114
+  Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
   Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -37,48 +41,107 @@ ClassTypes:
   Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 115
   Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
+- Class: 222
+  Script: {instanceID: 0}
+- Class: 224
+  Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.VertexGradient
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+- AssemblyName: UnityEngine.UI
+  ClassName: UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkHash128
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
-- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_Normal.png
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
 - Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
 - Assets/HDeItems/Tier2/AggroDown/texHDeAggroDown.png
-- Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
-- Assets/HDeItems/Expansion/HDeItemsExpansionSots.asset
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
+- Assets/HDeItems/Expansion/HDeItemsExpansionSots.asset
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.fbx
-- Assets/HDeItems/Tier2/AggroDown/RES_8track.fbx
+- Assets/HDeItems/Tier3/Ouroboros/Font/HEAVYWEIGHT.ttf
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Bottom.asset
 - Assets/HDeItems/Tier2/AggroDown/HDe_AggroDown.prefab
 - Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/ScreenFront.001.asset
 - Assets/HDeItems/Tier2/AggroDown/HDe_AggroDownDef.asset
-- Assets/HDeItems/Expansion/HDeItemsExpansionSotv.asset
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_MetallicSmoothness.png
 - Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
-- Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
-- Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Rails.asset
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Sticker01.001.asset
+- Assets/HDeItems/Tier3/Ouroboros/StrippedCard.prefab
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask.png
 - Assets/HDeItems/Tier2/AggroDown/8trackTape.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
-- Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/materials/DiskCardOverlay.mat
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/MetalSlider.asset
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/effects/WavesTexture_Brighter.png
 - Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
 - Assets/HDeItems/Tier2/AggroUp/HDe_AggroUpDef.asset
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Lights.006.asset
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask.mat
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicatorMat.mat
-- Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
-- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDiskCard-LOW-ForSubstance_TileForDirt_Mask-RGB-flipped.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc.mat
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/ScreenBack.001.asset
 - Assets/HDeItems/Tier2/AggroDown/8trackTape.mat
 - Assets/HDeItems/Tier2/AggroUp/HDe_AggroUp.prefab
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Light01.mat
+- Assets/HDeItems/Tier3/Ouroboros/HDe_OuroborosDef.asset
 - Assets/HDeItems/Tier2/AggroUp/boomer_bile.fbx
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_AlbedoTransparency.png
 - Assets/HDeItems/Tier1/Mouthwash/Bottle.fbx
+- Assets/HDeItems/Tier3/Ouroboros/Screen.mat
+- Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Top.asset
+- Assets/HDeItems/Tier2/AggroDown/RES_8track.fbx
+- Assets/HDeItems/Tier3/Ouroboros/Font/HEAVYWEIGHT SDF.asset
+- Assets/HDeItems/Expansion/HDeItemsExpansionSotv.asset
+- Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Magnetdisc.asset
+- Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
+- Assets/HDeItems/Tier3/Ouroboros/texHDeOurobot.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/cards/diskcardscreen/diskcard_screenoverlay_f1.png
+- Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
+- Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
+- Assets/HDeItems/Tier3/Ouroboros/HDe_Ouroboros.prefab
+- Assets/HDeItems/Tier3/Ouroboros/pic.png.png
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/StickerMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 Dependencies: []

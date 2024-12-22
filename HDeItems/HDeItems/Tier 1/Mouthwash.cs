@@ -66,7 +66,7 @@ namespace HDeMods.HDeItems.Tier1 {
 
         private void OnEnable() {
             Recalc();
-            bodyData.DamageServerEvent += OnTakeDamageServer;
+            bodyData.DamageReceivedServerEvent += OnTakeDamageReceivedServer;
             body.inventory.onInventoryChanged += SetCalcDirty;
             active = true;
             if (!NetworkServer.active) return;
@@ -78,13 +78,13 @@ namespace HDeMods.HDeItems.Tier1 {
         private void OnDisable() {
             if (!active) return;
             active = false;
-            bodyData.DamageServerEvent -= OnTakeDamageServer;
+            bodyData.DamageReceivedServerEvent -= OnTakeDamageReceivedServer;
             body.inventory.onInventoryChanged -= SetCalcDirty;
             if (!NetworkServer.active) return;
             NetworkServer.Destroy(igniteSphere.gameObject);
         }
 
-        public void OnTakeDamageServer(DamageReport damageReport) {
+        public void OnTakeDamageReceivedServer(DamageReport damageReport) {
             searchMe.origin = transform.position;
             searchMe.mask = LayerIndex.entityPrecise.mask;
             searchMe.radius = totalDistance;

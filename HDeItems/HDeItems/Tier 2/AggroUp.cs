@@ -28,6 +28,7 @@ namespace HDeMods.HDeItems.Tier2 {
             ItemAPI.Add(customItem);
             
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStats;
+            Log.Debug("Successfully loaded " + nameof(AggroUp));
         }
 
         private static void RecalculateStats(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args) {
