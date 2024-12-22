@@ -36,7 +36,11 @@ internal static class Settings {
                                                "\t\t\"Smooth_Salad-ShaderSwapper-1.0.1\"\n" +
                                                "\t]";
 
-    public static void Delegates() {
+    public static void PreRun() {
+        
+    }
+    
+    public static void PostRun() {
         
     }
 }

@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 //---------------------------------------------------Program------------------------------------------------------------
 
-Settings.Delegates();
+Settings.PreRun();
 
 #if DEBUG
 const string targetFile = "../" + Settings.pluginName + "/bin/" + Settings.pluginName + "_debug.zip";
@@ -87,3 +87,5 @@ using (StreamWriter writer = new(manifest.Open())) {
 }
 
 archive.Dispose();
+
+Settings.PostRun();
