@@ -53,8 +53,8 @@
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGRODOWN.CHECKBOX.DESCRIPTION" : "Enables Music Cassette. Default value is true. Requires restart.",
 
     "HDE_OUROBOROS_NAME" : "Ourobot",
-    "HDE_OUROBOROS_PICKUP" : "Gain <style=cIsDamage>+100%</style> damage for <style=cIsUtility>every time</style> you have collected this item.",
-    "HDE_OUROBOROS_DESCRIPTION" : "Gain <style=cIsDamage>+100%</style> <style=cStack>(+100% per stack)</style> damage, multiplied by the number of times you have collected this item <style=cIsUtility>across all runs</style>.",
+    "HDE_OUROBOROS_PICKUP" : "Attacks deal an additional <style=cIsDamage>50%</style> damage for <style=cIsUtility>every time</style> you have collected this item.",
+    "HDE_OUROBOROS_DESCRIPTION" : "Attacks deal an additional <style=cIsDamage>50%</style> <style=cStack>(+50% per stack)</style> damage, multiplied by the number of times you have collected this item <style=cIsUtility>across all runs</style>.",
     "HDE_OUROBOROS_LORE" : "Ourobot from Inscryption.",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_3.OUROBOROS.CHECKBOX.NAME" : "Ourobot",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_3.OUROBOROS.CHECKBOX.DESCRIPTION" : "Enables Ourobot. Default value is true. Requires restart.",

@@ -6,6 +6,7 @@ namespace HDeMods.HDeItems {
     [BepInDependency(ItemAPI.PluginGUID)]
     [BepInDependency(PrefabAPI.PluginGUID)]
     [BepInDependency(RecalculateStatsAPI.PluginGUID)]
+    [BepInDependency(HealthComponentAPI.PluginGUID)]
     [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin(PluginGUID, PluginName, PluginVersion)]
     [SuppressMessage("ReSharper", "InconsistentNaming")]

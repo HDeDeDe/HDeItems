@@ -46,9 +46,8 @@ namespace HDeMods.HDeItems {
         }
     }
     
-    public class BodyData : NetworkBehaviour, IOnTakeDamageServerReceiver, IOnDamageDealtServerReceiver {
+    public class BodyData : NetworkBehaviour, IOnTakeDamageServerReceiver {
         public event Action<DamageReport> DamageReceivedServerEvent;
-        public event Action<DamageReport> DamageDealtServerEvent;
         public CharacterBody body; 
         [SyncVar]public bool damagedThisTick;
         [SyncVar]public uint infusionBonus;
@@ -59,10 +58,6 @@ namespace HDeMods.HDeItems {
 
         public void OnTakeDamageServer(DamageReport damageReport) {
             DamageReceivedServerEvent?.Invoke(damageReport);
-        }
-
-        public void OnDamageDealtServer(DamageReport damageReport) {
-            DamageDealtServerEvent?.Invoke(damageReport);
         }
         
         public static void OnBodyAwakeGlobal(CharacterBody body) {

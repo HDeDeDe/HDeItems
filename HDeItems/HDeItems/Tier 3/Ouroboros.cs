@@ -50,7 +50,7 @@ namespace HDeMods.HDeItems.Tier3 {
             
             PlayerCharacterMasterController pcmc = sender.master.playerCharacterMasterController;
             if (!pcmc) return;
-            if (!pcmc.isLocalPlayer) return;
+            if (!pcmc.hasAuthority) return;
             LocalUser player = null;
             foreach (LocalUser user in LocalUserManager.localUsersList) {
                 if (user.cachedMasterController == pcmc) player = user;
@@ -60,6 +60,7 @@ namespace HDeMods.HDeItems.Tier3 {
             if (!data) return;
             int ouroCount = (int)player.userProfile.statSheet.GetStatValueULong(stat);
             data.ouroborosBonus = ouroCount;
+            Log.Warning("Boros Count: " + data.ouroborosBonus);
         }
 
         public BodyData bodyData;
@@ -70,19 +71,20 @@ namespace HDeMods.HDeItems.Tier3 {
         }
 
         private void OnEnable() {
-            bodyData.DamageDealtServerEvent += OnDamageDealtServer;
+            HealthComponentAPI.OnTakeDamageProcess += OnDamageDealtServer;
         }
         
         private void OnDisable() {
-            bodyData.DamageDealtServerEvent -= OnDamageDealtServer;
+            HealthComponentAPI.OnTakeDamageProcess -= OnDamageDealtServer;
         }
 
-        private void OnDamageDealtServer(DamageReport damageReport) {
-            if (damageReport.attackerBody != body) return;
+        private void OnDamageDealtServer(HealthComponent hc, DamageInfo damageInfo) {
+            if (damageInfo.attacker != body.gameObject) return;
             if (!body.inventory) return;
-            float damageMult = body.inventory.GetItemCount(item);
+            float damageMult = body.damage * (body.inventory.GetItemCount(item) / 2f);
             if (bodyData.ouroborosBonus > 0) damageMult *= bodyData.ouroborosBonus;
-            damageReport.damageDealt *= 1 + damageMult;
+            damageInfo.damage += damageMult;
+            Log.Warning("Projected damage: " + damageInfo.damage);
         }
     }
 }

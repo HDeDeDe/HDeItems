@@ -12,6 +12,7 @@ namespace HDeMods.HDeItems {
 
         private static void BaseAI_OnBodyDamaged(On.RoR2.CharacterAI.BaseAI.orig_OnBodyDamaged orig, 
             BaseAI self, DamageReport damagereport) {
+            if (self.currentEnemy == null) return;
             BodyData enemyBodyData = damagereport.damageInfo.attacker.GetComponent<BodyData>();
             BodyData currentTargetData = self.currentEnemy.gameObject.GetComponent<BodyData>();
             if (!enemyBodyData || !currentTargetData) {

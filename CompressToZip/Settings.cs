@@ -33,6 +33,7 @@ internal static class Settings {
                                                "\t\t\"RiskofThunder-R2API_Items-1.0.4\",\n" +
                                                "\t\t\"RiskofThunder-R2API_Prefab-1.0.4\",\n" +
                                                "\t\t\"RiskofThunder-R2API_RecalculateStats-1.4.0\",\n" +
+                                               "\t\t\"HDeDeDe-HealthComponentAPI-1.2.0\",\n" +
                                                "\t\t\"Smooth_Salad-ShaderSwapper-1.0.1\"\n" +
                                                "\t]";
 

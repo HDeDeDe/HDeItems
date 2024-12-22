@@ -17,6 +17,7 @@
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.4.21" />
         <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.2" PrivateAssets="all" />
+        <PackageReference Include="HDeDeDe.Mods.RiskOfRain2.HealthComponentAPI" Version="1.2.0" />
         <PackageReference Include="R2API.Items" Version="1.0.4" />
         <PackageReference Include="R2API.Orb" Version="1.0.1" />
         <PackageReference Include="R2API.Prefab" Version="1.0.4" />
