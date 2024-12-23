@@ -12,15 +12,26 @@ namespace HDeMods.HDeItems {
 
         private static void BaseAI_OnBodyDamaged(On.RoR2.CharacterAI.BaseAI.orig_OnBodyDamaged orig, 
             BaseAI self, DamageReport damagereport) {
-            if (self.currentEnemy == null) return;
-            if (!damagereport.damageInfo.attacker) return;
-            BodyData enemyBodyData = damagereport.damageInfo.attacker.GetComponent<CharacterBody>().masterObject.GetComponent<BodyData>();
-            if (!enemyBodyData) {
+            if (!self.currentEnemy.characterBody || !damagereport.damageInfo.attacker) {
                 orig(self, damagereport);
                 return;
             }
-            if (!self.currentEnemy.characterBody) return;
+            BodyData enemyBodyData = damagereport.damageInfo.attacker.GetComponent<CharacterBody>().masterObject.GetComponent<BodyData>();
+            if (!enemyBodyData) {
+#if DEBUG
+                Log.Error("AggroManager.BaseAI_OnBodyDamaged: " + damagereport.damageInfo.attacker.GetComponent<CharacterBody>().masterObject.name + " does not have body data.");
+#endif
+                orig(self, damagereport);
+                return;
+            }
             BodyData currentTargetData = self.currentEnemy.characterBody.masterObject.GetComponent<BodyData>();
+            if (!currentTargetData) {
+#if DEBUG
+                Log.Error("AggroManager.BaseAI_OnBodyDamaged: " +  self.currentEnemy.characterBody.masterObject.name + " does not have body data.");
+#endif
+                orig(self, damagereport);
+                return;
+            }
             
             if (enemyBodyData.Aggro >= currentTargetData.Aggro) orig(self, damagereport);
         }

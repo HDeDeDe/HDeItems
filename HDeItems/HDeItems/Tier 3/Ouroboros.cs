@@ -41,11 +41,16 @@ namespace HDeMods.HDeItems.Tier3 {
 
         private static CharacterBody CharacterMaster_Respawn(On.RoR2.CharacterMaster.orig_Respawn orig, 
             CharacterMaster self, Vector3 footposition, Quaternion rotation, bool wasrevivedmidstage) {
-            if (!NetworkServer.active) return orig(self, footposition, rotation, wasrevivedmidstage);
-            CharacterBody body = self.GetBody();
-            if (!body) return orig(self, footposition, rotation, wasrevivedmidstage);
-            BodyData data = body.GetComponent<BodyData>();
-            if (!data) return orig(self, footposition, rotation, wasrevivedmidstage);
+            if (!NetworkServer.active) {
+                return orig(self, footposition, rotation, wasrevivedmidstage);
+            }
+            BodyData data = self.GetComponent<BodyData>();
+            if (!data) {
+#if DEBUG
+                Log.Error("Ouroboros.CharacterMaster_Respawn: " + self.name + " does not have body data.");
+#endif
+                return orig(self, footposition, rotation, wasrevivedmidstage);
+            }
             data.ouroborosBonus++;
             return orig(self, footposition, rotation, wasrevivedmidstage);
         }

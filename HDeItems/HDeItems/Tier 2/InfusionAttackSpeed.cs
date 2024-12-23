@@ -106,13 +106,12 @@ namespace HDeMods.HDeItems.Tier2 {
             EffectManager.SpawnEffect(OrbStorageUtility.Get("Prefabs/Effects/OrbEffects/InfusionOrbEffect"), effectData, true);
             HurtBox component = target.GetComponent<HurtBox>();
             CharacterBody characterBody = (component != null) ? component.healthComponent.GetComponent<CharacterBody>() : null;
-            if (!characterBody) {
-                Log.Warning("No character body found");
-                return;
-            }
+            if (!characterBody) return;
             BodyData bodyData = characterBody.masterObject.GetComponent<BodyData>();
             if (!bodyData) {
-                Log.Warning("Could not acquire body data.");
+#if DEBUG
+                Log.Warning("InfusionAttackSpeedOrb.Begin: " + characterBody.masterObject.name + " does not have body data.");
+#endif
                 return;
             }
             m_targetBodyData = bodyData;
@@ -120,7 +119,9 @@ namespace HDeMods.HDeItems.Tier2 {
 
         public override void OnArrival() {
             if (!m_targetBodyData) {
-                Log.Warning("No body data to apply to");
+#if DEBUG
+                Log.Warning("InfusionAttackSpeedOrb.OnArrival: No body data to apply to");
+#endif
                 return;
             }
             m_targetBodyData.AddInfusionBonus((uint)attackSpeedValue);

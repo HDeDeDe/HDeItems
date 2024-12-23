@@ -35,7 +35,12 @@ namespace HDeMods.HDeItems.Tier2 {
             Inventory inventory = sender.inventory;
             if (!inventory) return;
             BodyData bodyData = sender.masterObject.GetComponent<BodyData>();
-            if (!bodyData) return;
+            if (!bodyData) {
+#if DEBUG
+                Log.Error("AggroUp.RecalculateStats: " + sender.masterObject.name + " does not have body data.");
+#endif
+                return;
+            }
             bodyData.aggroUp = inventory.GetItemCount(item);
         }
     }
