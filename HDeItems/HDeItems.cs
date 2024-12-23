@@ -32,6 +32,7 @@ namespace HDeMods.HDeItems {
             
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
             CharacterBody.onBodyAwakeGlobal += BodyData.OnBodyAwakeGlobal;
+            CharacterMaster.onStartGlobal += BodyData.OnCharacterMasterStartGlobal;
             Expansion.Init();
             AggroManager.Init();
 
@@ -46,29 +47,47 @@ namespace HDeMods.HDeItems {
         }
     }
     
-    public class BodyData : NetworkBehaviour, IOnTakeDamageServerReceiver {
+    public class BodyData : NetworkBehaviour {
         public event Action<DamageReport> DamageReceivedServerEvent;
-        public CharacterBody body; 
+        public CharacterBody body;
+        public CharacterMaster master;
         [SyncVar]public bool damagedThisTick;
         [SyncVar]public uint infusionBonus;
         [SyncVar]public int aggroUp;
         [SyncVar]public int aggroDown;
         [SyncVar]public int ouroborosBonus;
         public int Aggro => aggroUp - aggroDown;
-
-        public void OnTakeDamageServer(DamageReport damageReport) {
-            DamageReceivedServerEvent?.Invoke(damageReport);
-        }
         
         public static void OnBodyAwakeGlobal(CharacterBody body) {
-            BodyData temp = body.gameObject.AddComponent<BodyData>();
-            temp.body = body;
+            body.gameObject.AddComponent<BodyDataHelper>();
+        }
+
+        public static void OnCharacterMasterStartGlobal(CharacterMaster characterMaster) {
+            BodyData temp = characterMaster.gameObject.AddComponent<BodyData>();
+            temp.master = characterMaster;
+            characterMaster.onBodyStart += temp.GetBody;
+        }
+
+        public void GetBody(CharacterBody characterBody) {
+            body = characterBody;
+            body.GetComponent<BodyDataHelper>().invoker = this;
+        }
+
+        public void InvokeDamageReceivedServerEvent(DamageReport damageReport) {
+            DamageReceivedServerEvent?.Invoke(damageReport);
         }
 
         private void FixedUpdate() {
             damagedThisTick = false;
         }
     }
+
+    public class BodyDataHelper : MonoBehaviour, IOnTakeDamageServerReceiver {
+        public BodyData invoker;
+        public void OnTakeDamageServer(DamageReport damageReport) => 
+            invoker?.InvokeDamageReceivedServerEvent(damageReport);
+    }
+    
 
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public sealed class HDeItem : Attribute {

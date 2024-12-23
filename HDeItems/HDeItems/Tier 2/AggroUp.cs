@@ -34,7 +34,7 @@ namespace HDeMods.HDeItems.Tier2 {
         private static void RecalculateStats(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args) {
             Inventory inventory = sender.inventory;
             if (!inventory) return;
-            BodyData bodyData = sender.GetComponent<BodyData>();
+            BodyData bodyData = sender.masterObject.GetComponent<BodyData>();
             if (!bodyData) return;
             bodyData.aggroUp = inventory.GetItemCount(item);
         }

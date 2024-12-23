@@ -58,7 +58,7 @@ namespace HDeMods.HDeItems.Tier2 {
             if (!inventory) return;
             int infCount = inventory.GetItemCount(item);
             if (infCount <= 0) return;
-            BodyData bodyData = body.GetComponent<BodyData>();
+            BodyData bodyData = body.masterObject.GetComponent<BodyData>();
             if (bodyData.infusionBonus >= (ulong)(infCount * 100)) return;
             
             InfusionAttackSpeedOrb orbMe = new InfusionAttackSpeedOrb {
@@ -74,7 +74,7 @@ namespace HDeMods.HDeItems.Tier2 {
             if (!inventory) return;
             int infCount = inventory.GetItemCount(item);
             if (infCount <= 0) return;
-            BodyData bodyData = body.gameObject.GetComponent<BodyData>();
+            BodyData bodyData = body.masterObject.GetComponent<BodyData>();
             args.attackSpeedMultAdd += 0.01f * bodyData.infusionBonus;
             body.SetBuffCount(buff.buffIndex, (int)bodyData.infusionBonus);
         }
@@ -110,7 +110,7 @@ namespace HDeMods.HDeItems.Tier2 {
                 Log.Warning("No character body found");
                 return;
             }
-            BodyData bodyData = characterBody.GetComponent<BodyData>();
+            BodyData bodyData = characterBody.masterObject.GetComponent<BodyData>();
             if (!bodyData) {
                 Log.Warning("Could not acquire body data.");
                 return;

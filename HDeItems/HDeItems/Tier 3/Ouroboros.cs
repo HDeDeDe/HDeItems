@@ -2,6 +2,8 @@ using RoR2;
 using R2API;
 using BepInEx.Configuration;
 using RoR2.Stats;
+using UnityEngine;
+using UnityEngine.Networking;
 
 namespace HDeMods.HDeItems.Tier3 {
     [HDeItem] public class Ouroboros : CharacterBody.ItemBehavior {
@@ -30,12 +32,24 @@ namespace HDeMods.HDeItems.Tier3 {
             ItemAPI.Add(customItem);
             
             CharacterBody.onBodyInventoryChangedGlobal += OnInventoryChangedGlobal;
-            RecalculateStatsAPI.GetStatCoefficients += RecalcStats;
+            /*RecalculateStatsAPI.GetStatCoefficients += RecalcStats;*/
+            On.RoR2.CharacterMaster.Respawn += CharacterMaster_Respawn;
             RoR2Application.onLoad += OnLoad;
             
             Log.Debug("Successfully loaded " + nameof(Ouroboros));
         }
-        
+
+        private static CharacterBody CharacterMaster_Respawn(On.RoR2.CharacterMaster.orig_Respawn orig, 
+            CharacterMaster self, Vector3 footposition, Quaternion rotation, bool wasrevivedmidstage) {
+            if (!NetworkServer.active) return orig(self, footposition, rotation, wasrevivedmidstage);
+            CharacterBody body = self.GetBody();
+            if (!body) return orig(self, footposition, rotation, wasrevivedmidstage);
+            BodyData data = body.GetComponent<BodyData>();
+            if (!data) return orig(self, footposition, rotation, wasrevivedmidstage);
+            data.ouroborosBonus++;
+            return orig(self, footposition, rotation, wasrevivedmidstage);
+        }
+
         public static void OnInventoryChangedGlobal(CharacterBody body) {
             body.AddItemBehavior<Ouroboros>(body.inventory.GetItemCount(item));
         }
@@ -44,7 +58,7 @@ namespace HDeMods.HDeItems.Tier3 {
             stat = StatDef.Find("totalCollected.HDe_OuroborosDef");
         }
 
-        private static void RecalcStats(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args) {
+        /*private static void RecalcStats(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args) {
             if (!sender.inventory) return;
             if (sender.inventory.GetItemCount(item) <= 0) return;
             
@@ -60,17 +74,16 @@ namespace HDeMods.HDeItems.Tier3 {
             if (!data) return;
             int ouroCount = (int)player.userProfile.statSheet.GetStatValueULong(stat);
             data.ouroborosBonus = ouroCount;
-            Log.Warning("Boros Count: " + data.ouroborosBonus);
-        }
+        }*/
 
         public BodyData bodyData;
         
         private void Awake() {
-            bodyData = GetComponent<BodyData>();
             enabled = false;
         }
 
         private void OnEnable() {
+            bodyData = body.masterObject.GetComponent<BodyData>();
             HealthComponentAPI.OnTakeDamageProcess += OnDamageDealtServer;
         }
         
@@ -81,10 +94,9 @@ namespace HDeMods.HDeItems.Tier3 {
         private void OnDamageDealtServer(HealthComponent hc, DamageInfo damageInfo) {
             if (damageInfo.attacker != body.gameObject) return;
             if (!body.inventory) return;
-            float damageMult = body.damage * (body.inventory.GetItemCount(item) / 2f);
-            if (bodyData.ouroborosBonus > 0) damageMult *= bodyData.ouroborosBonus;
+            float damageMult = body.damage * body.inventory.GetItemCount(item);
+            damageMult *= bodyData.ouroborosBonus + 1;
             damageInfo.damage += damageMult;
-            Log.Warning("Projected damage: " + damageInfo.damage);
         }
     }
 }

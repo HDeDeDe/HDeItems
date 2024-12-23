@@ -60,12 +60,12 @@ namespace HDeMods.HDeItems.Tier1 {
         public void Recalc() => totalDistance = baseDistance + ((float)Math.Tanh((double)(stack - 1) / 20) * 45);
 
         private void Awake() {
-            bodyData = GetComponent<BodyData>();
             enabled = false;
         }
 
         private void OnEnable() {
             Recalc();
+            bodyData = body.masterObject.GetComponent<BodyData>();
             bodyData.DamageReceivedServerEvent += OnTakeDamageReceivedServer;
             body.inventory.onInventoryChanged += SetCalcDirty;
             active = true;
@@ -97,7 +97,7 @@ namespace HDeMods.HDeItems.Tier1 {
             foreach (HurtBox box in hurtBoxBuffer) {
                 HealthComponent hc = box.healthComponent;
                 if (!hc) continue;
-                BodyData bd = hc.GetComponent<BodyData>();
+                BodyData bd = hc.body.masterObject.GetComponent<BodyData>();
                 if (bd.damagedThisTick) continue;
                 if (hc.body.GetBuffCount(RoR2Content.Buffs.OnFire) == 3 + (uint)(stack * 2)) continue;
                 InflictDotInfo igniteEm = new InflictDotInfo {

@@ -13,12 +13,15 @@ namespace HDeMods.HDeItems {
         private static void BaseAI_OnBodyDamaged(On.RoR2.CharacterAI.BaseAI.orig_OnBodyDamaged orig, 
             BaseAI self, DamageReport damagereport) {
             if (self.currentEnemy == null) return;
-            BodyData enemyBodyData = damagereport.damageInfo.attacker.GetComponent<BodyData>();
-            BodyData currentTargetData = self.currentEnemy.gameObject.GetComponent<BodyData>();
-            if (!enemyBodyData || !currentTargetData) {
+            if (!damagereport.damageInfo.attacker) return;
+            BodyData enemyBodyData = damagereport.damageInfo.attacker.GetComponent<CharacterBody>().masterObject.GetComponent<BodyData>();
+            if (!enemyBodyData) {
                 orig(self, damagereport);
                 return;
             }
+            if (!self.currentEnemy.characterBody) return;
+            BodyData currentTargetData = self.currentEnemy.characterBody.masterObject.GetComponent<BodyData>();
+            
             if (enemyBodyData.Aggro >= currentTargetData.Aggro) orig(self, damagereport);
         }
 
@@ -26,7 +29,7 @@ namespace HDeMods.HDeItems {
         private static IEnumerable<HurtBox> BullseyeSearch_GetResults(On.RoR2.BullseyeSearch.orig_GetResults orig, 
             BullseyeSearch self) => orig(self)
             .OrderByDescending((i) => 
-                i.healthComponent && i.healthComponent
+                i.healthComponent && i.healthComponent.body.masterObject
                     .TryGetComponent<BodyData>(out BodyData d) ? d.Aggro : 0);
     }
 }
