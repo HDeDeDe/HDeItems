@@ -1,5 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CustomTools/CustomToolsData/@EntryValue"></s:String>
+	<s:Boolean x:Key="/Default/Environment/Hierarchy/Build/SolutionBuilderNext/InvokePreAndPostBuildEventTargetsForSkippedProjects/@EntryValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
@@ -35,6 +36,8 @@ namespace $NAMESPACE$ {
 
             CustomItem customItem = new CustomItem(item, new[] { new ItemDisplayRule() });
             ItemAPI.Add(customItem);
+            
+            Log.Debug("Successfully loaded " + nameof($CLASS$));
         }
     }
 }</s:String>
