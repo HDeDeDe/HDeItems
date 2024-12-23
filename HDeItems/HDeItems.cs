@@ -60,7 +60,12 @@ namespace HDeMods.HDeItems {
         [SyncVar]public int aggroDown;
         [SyncVar]public int ouroborosBonus;
         public int Aggro => aggroUp - aggroDown;
-        
+
+        public void Awake() {
+            master = GetComponent<CharacterMaster>();
+            master.onBodyStart += GetBody;
+        }
+
         public static void OnBodyAwakeGlobal(CharacterBody body) {
             body.gameObject.AddComponent<BodyDataHelper>();
         }
@@ -76,9 +81,7 @@ namespace HDeMods.HDeItems {
             }
             c.Emit(OpCodes.Ldloc_3);
             c.EmitDelegate<RuntimeILReferenceBag.FastDelegateInvokers.Action<CharacterMaster>>(characterMaster => {
-                BodyData temp = characterMaster.gameObject.AddComponent<BodyData>();
-                temp.master = characterMaster;
-                characterMaster.onBodyStart += temp.GetBody;
+                characterMaster.gameObject.AddComponent<BodyData>();
             });
             
             ItemManager.successfulHook = true;
