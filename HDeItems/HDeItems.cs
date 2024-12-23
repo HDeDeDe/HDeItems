@@ -7,6 +7,8 @@ using HarmonyLib;
 using ShaderSwapper;
 using UnityEngine;
 using BepInEx.Logging;
+using Mono.Cecil.Cil;
+using MonoMod.Cil;
 using R2API.ContentManagement;
 using R2API.ScriptableObjects;
 using RoR2;
@@ -18,6 +20,7 @@ namespace HDeMods.HDeItems {
         // ReSharper disable once InconsistentNaming
         internal static AssetBundle HDeItemsBundle;
         internal static R2APISerializableContentPack pack;
+        internal static bool successfulHook;
         internal static void Startup() {
             if (!File.Exists(Assembly.GetExecutingAssembly().Location
                     .Replace("HDeItems.dll", "hdeitems"))) {
@@ -32,7 +35,7 @@ namespace HDeMods.HDeItems {
             
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
             CharacterBody.onBodyAwakeGlobal += BodyData.OnBodyAwakeGlobal;
-            CharacterMaster.onStartGlobal += BodyData.OnCharacterMasterStartGlobal;
+            IL.RoR2.MasterCatalog.SetEntries += BodyData.MasterCatalog_SetEntries;
             Expansion.Init();
             AggroManager.Init();
 
@@ -62,10 +65,23 @@ namespace HDeMods.HDeItems {
             body.gameObject.AddComponent<BodyDataHelper>();
         }
 
-        public static void OnCharacterMasterStartGlobal(CharacterMaster characterMaster) {
-            BodyData temp = characterMaster.gameObject.AddComponent<BodyData>();
-            temp.master = characterMaster;
-            characterMaster.onBodyStart += temp.GetBody;
+        public static void MasterCatalog_SetEntries(ILContext il) {
+            ILCursor c = new ILCursor(il);
+            if (!c.TryGotoNext(moveType: MoveType.After,
+                    x => x.MatchCallvirt<GameObject>("GetComponent"),
+                    x => x.MatchStloc(3)
+                )) {
+                Log.Fatal("Failed to generate hook for MasterCatalog.SetEntries!");
+                return;
+            }
+            c.Emit(OpCodes.Ldloc_3);
+            c.EmitDelegate<RuntimeILReferenceBag.FastDelegateInvokers.Action<CharacterMaster>>(characterMaster => {
+                BodyData temp = characterMaster.gameObject.AddComponent<BodyData>();
+                temp.master = characterMaster;
+                characterMaster.onBodyStart += temp.GetBody;
+            });
+            
+            ItemManager.successfulHook = true;
         }
 
         public void GetBody(CharacterBody characterBody) {
@@ -95,6 +111,10 @@ namespace HDeMods.HDeItems {
             origInit();
             
             Log.Debug("Loading HDeItems.");
+            if (!ItemManager.successfulHook) {
+                Log.Fatal("MasterCatalogue wasn't hooked, aborting!");
+                return;
+            }
             foreach (Type item in GetTypesWithHDeItemAttribute(Assembly.GetExecutingAssembly())) {
                 AccessTools.Method(item, "HDeItem_Init").Invoke(null, null);
             }
