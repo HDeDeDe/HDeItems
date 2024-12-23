@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1058132111
+CRC: 858027276
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 40f2ceec9476ea4d3a810fefcb96055a
+    Hash: bfa3fdd93d98562dc1fa80ab9dba8c5e
   TypeTreeHash:
     serializedVersion: 2
     Hash: ad57158a98d8230f55a2942a603846f7
@@ -94,17 +94,17 @@ Assets:
 - Assets/HDeItems/Tier1/Mouthwash/texRampHelfire.png
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/ScreenFront.001.asset
 - Assets/HDeItems/Tier2/AggroDown/HDe_AggroDownDef.asset
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_MetallicSmoothness.png
+- Assets/HDeItems/Tier3/Ouroboros/fuck.fbx
 - Assets/HDeItems/Tier1/Mouthwash/texMagmaCloud.png
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Rails.asset
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Sticker01.001.asset
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_MetallicSmoothness.png
 - Assets/HDeItems/Tier3/Ouroboros/StrippedCard.prefab
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask.png
 - Assets/HDeItems/Tier2/AggroDown/8trackTape.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/materials/DiskCardOverlay.mat
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/MetalSlider.asset
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/effects/WavesTexture_Brighter.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Sticker01.001.asset
 - Assets/HDeItems/Tier1/Mouthwash/texMouthwashingEntertainmentProduct.png
 - Assets/HDeItems/Tier2/AggroUp/HDe_AggroUpDef.asset
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Lights.006.asset
@@ -116,12 +116,15 @@ Assets:
 - Assets/HDeItems/Tier2/AggroDown/8trackTape.mat
 - Assets/HDeItems/Tier2/AggroUp/HDe_AggroUp.prefab
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Light01.mat
 - Assets/HDeItems/Tier3/Ouroboros/HDe_OuroborosDef.asset
 - Assets/HDeItems/Tier2/AggroUp/boomer_bile.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_AlbedoTransparency.png
 - Assets/HDeItems/Tier1/Mouthwash/Bottle.fbx
-- Assets/HDeItems/Tier3/Ouroboros/Screen.mat
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/effects/WavesTexture_Brighter.png
+- Assets/HDeItems/Tier3/Ouroboros/mdlCard.prefab
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
+- Assets/HDeItems/Tier3/Ouroboros/Screen.mat
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Top.asset
 - Assets/HDeItems/Tier2/AggroDown/RES_8track.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Font/HEAVYWEIGHT SDF.asset
@@ -141,5 +144,6 @@ Assets:
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/StickerMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 Dependencies: []
