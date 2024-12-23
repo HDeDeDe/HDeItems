@@ -100,7 +100,7 @@ namespace HDeMods.HDeItems.Tier3 {
             if (damageInfo.attacker != body.gameObject) return;
             if (!body.inventory) return;
             float damageMult = body.damage * body.inventory.GetItemCount(item);
-            damageMult *= bodyData.ouroborosBonus + 1;
+            damageMult *= bodyData.ouroborosBonus;
             damageInfo.damage += damageMult;
         }
     }
