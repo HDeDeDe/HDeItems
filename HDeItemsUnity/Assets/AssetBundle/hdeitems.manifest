@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3744871950
+CRC: 1058132111
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 47ee5071801dd27da6f6042e4607e0b0
+    Hash: 40f2ceec9476ea4d3a810fefcb96055a
   TypeTreeHash:
     serializedVersion: 2
     Hash: ad57158a98d8230f55a2942a603846f7
@@ -116,7 +116,6 @@ Assets:
 - Assets/HDeItems/Tier2/AggroDown/8trackTape.mat
 - Assets/HDeItems/Tier2/AggroUp/HDe_AggroUp.prefab
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Light01.mat
 - Assets/HDeItems/Tier3/Ouroboros/HDe_OuroborosDef.asset
 - Assets/HDeItems/Tier2/AggroUp/boomer_bile.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_AlbedoTransparency.png
@@ -142,6 +141,5 @@ Assets:
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/StickerMat.mat
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 Dependencies: []

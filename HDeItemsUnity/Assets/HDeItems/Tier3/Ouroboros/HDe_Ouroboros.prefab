@@ -126,18 +126,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573430002325189830, guid: c5c57d763f73daa46a2e0b35e08b6247, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.70000017
-      objectReference: {fileID: 0}
-    - target: {fileID: 573430002325189830, guid: c5c57d763f73daa46a2e0b35e08b6247, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 573430002325189830, guid: c5c57d763f73daa46a2e0b35e08b6247, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.70000017
-      objectReference: {fileID: 0}
-    - target: {fileID: 573430002325189830, guid: c5c57d763f73daa46a2e0b35e08b6247, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -181,7 +169,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrippedCard
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5382978379725122857, guid: c5c57d763f73daa46a2e0b35e08b6247, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c5c57d763f73daa46a2e0b35e08b6247, type: 3}
 --- !u!4 &3689193005381234215 stripped
 Transform:
