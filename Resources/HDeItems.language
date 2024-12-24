@@ -40,22 +40,22 @@
 
     "HDE_AGGROUP_NAME" : "Boomer Bile",
     "HDE_AGGROUP_PICKUP" : "Increase aggro.",
-    "HDE_AGGROUP_DESCRIPTION" : "Increase aggro.",
-    "HDE_AGGROUP_LORE" : "Boomer Bile from Left 4 Dead 2",
+    "HDE_AGGROUP_DESCRIPTION" : "Increase aggro. Enemies prioritize the target with the highest aggro stat.",
+    "HDE_AGGROUP_LORE" : "<style=cMono>This item doesn't have proper lore right now.</style>\n\nBoomer Bile from Left 4 Dead 2. It seems to attract undesired attention.",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGROUP.CHECKBOX.NAME" : "Boomer Bile",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGROUP.CHECKBOX.DESCRIPTION" : "Enables Boomer Bile. Default value is true. Requires restart.",
 
     "HDE_AGGRODOWN_NAME" : "Music Cassette",
     "HDE_AGGRODOWN_PICKUP" : "Decrease aggro.",
-    "HDE_AGGRODOWN_DESCRIPTION" : "Decrease aggro.",
-    "HDE_AGGRODOWN_LORE" : "Music Cassette from SIGNALIS. Used to keep Eule units stable.",
+    "HDE_AGGRODOWN_DESCRIPTION" : "Decrease aggro. Enemies prioritize the target with the highest aggro stat.",
+    "HDE_AGGRODOWN_LORE" : "<style=cMono>This item doesn't have proper lore right now.</style>\n\nMusic Cassette from SIGNALIS. Used to for persona stabilization of Eule units.",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGRODOWN.CHECKBOX.NAME" : "Music Cassette",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_2.AGGRODOWN.CHECKBOX.DESCRIPTION" : "Enables Music Cassette. Default value is true. Requires restart.",
 
     "HDE_OUROBOROS_NAME" : "Ourobot",
     "HDE_OUROBOROS_PICKUP" : "Attacks deal an additional <style=cIsDamage>100%</style> damage for <style=cIsUtility>every time</style> you have been revived.",
     "HDE_OUROBOROS_DESCRIPTION" : "Attacks deal an additional <style=cIsDamage>100%</style> <style=cStack>(+100% per stack)</style> damage, multiplied by the number of times you have been <style=cIsHealing>revived</style> this run.",
-    "HDE_OUROBOROS_LORE" : "Ourobot from Inscryption.",
+    "HDE_OUROBOROS_LORE" : "<style=cMono>This item doesn't have proper lore right now.</style>\n\nOurobot from Inscryption. Every time it dies it gets stronger.",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_3.OUROBOROS.CHECKBOX.NAME" : "Ourobot",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_3.OUROBOROS.CHECKBOX.DESCRIPTION" : "Enables Ourobot. Default value is true. Requires restart.",
     
