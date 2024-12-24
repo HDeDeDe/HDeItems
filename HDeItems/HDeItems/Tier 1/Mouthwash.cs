@@ -57,7 +57,7 @@ namespace HDeMods.HDeItems.Tier1 {
         public bool calcDirty;
 
         public void SetCalcDirty() => calcDirty = true;
-        public void Recalc() => totalDistance = baseDistance + ((float)Math.Tanh((double)(stack - 1) / 20) * 45);
+        public void Recalc() => totalDistance = baseDistance + ((stack - 1) * 5);
 
         private void Awake() {
             enabled = false;
