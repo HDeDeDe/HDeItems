@@ -97,8 +97,8 @@ namespace HDeMods.HDeItems.Tier1 {
             foreach (HurtBox box in hurtBoxBuffer) {
                 HealthComponent hc = box.healthComponent;
                 if (!hc) continue;
-                BodyData bd = hc.body.masterObject.GetComponent<BodyData>();
-                if (bd.damagedThisTick) continue;
+                BodyDataHelper bd = hc.body.GetComponent<BodyDataHelper>();
+                if (bd.invoker.damagedThisTick) continue;
                 if (hc.body.GetBuffCount(RoR2Content.Buffs.OnFire) == 3 + (uint)(stack * 2)) continue;
                 InflictDotInfo igniteEm = new InflictDotInfo {
                     victimObject = hc.body.gameObject,
@@ -110,7 +110,7 @@ namespace HDeMods.HDeItems.Tier1 {
                 };
                 StrengthenBurnUtils.CheckDotForUpgrade(body.inventory, ref igniteEm);
                 DotController.InflictDot(ref igniteEm);
-                bd.damagedThisTick = true;
+                bd.invoker.damagedThisTick = true;
             }
         }
 

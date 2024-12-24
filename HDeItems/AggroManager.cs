@@ -16,24 +16,24 @@ namespace HDeMods.HDeItems {
                 orig(self, damagereport);
                 return;
             }
-            BodyData enemyBodyData = damagereport.damageInfo.attacker.GetComponent<CharacterBody>().masterObject.GetComponent<BodyData>();
+            BodyDataHelper enemyBodyData = damagereport.damageInfo.attacker.GetComponent<BodyDataHelper>();
             if (!enemyBodyData) {
 #if DEBUG
-                Log.Error("AggroManager.BaseAI_OnBodyDamaged: " + damagereport.damageInfo.attacker.GetComponent<CharacterBody>().masterObject.name + " does not have body data.");
+                Log.Error("AggroManager.BaseAI_OnBodyDamaged: " + damagereport.damageInfo.attacker.name + " does not have a body data helper.");
 #endif
                 orig(self, damagereport);
                 return;
             }
-            BodyData currentTargetData = self.currentEnemy.characterBody.masterObject.GetComponent<BodyData>();
+            BodyDataHelper currentTargetData = self.currentEnemy.characterBody.GetComponent<BodyDataHelper>();
             if (!currentTargetData) {
 #if DEBUG
-                Log.Error("AggroManager.BaseAI_OnBodyDamaged: " +  self.currentEnemy.characterBody.masterObject.name + " does not have body data.");
+                Log.Error("AggroManager.BaseAI_OnBodyDamaged: " +  self.currentEnemy.characterBody.name + " does not have a body data helper.");
 #endif
                 orig(self, damagereport);
                 return;
             }
             
-            if (enemyBodyData.Aggro >= currentTargetData.Aggro) orig(self, damagereport);
+            if (enemyBodyData.invoker.Aggro >= currentTargetData.invoker.Aggro) orig(self, damagereport);
         }
 
         // Thanks to KingEnderBrine, Chinchi, Violetchaolan, and Harb for this... creature...

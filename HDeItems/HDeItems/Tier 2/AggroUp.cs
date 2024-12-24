@@ -34,14 +34,15 @@ namespace HDeMods.HDeItems.Tier2 {
         private static void RecalculateStats(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args) {
             Inventory inventory = sender.inventory;
             if (!inventory) return;
-            BodyData bodyData = sender.masterObject.GetComponent<BodyData>();
-            if (!bodyData) {
+            BodyDataHelper bodyDataHelper = sender.GetComponent<BodyDataHelper>();
+            if (!bodyDataHelper) {
 #if DEBUG
-                Log.Error("AggroUp.RecalculateStats: " + sender.masterObject.name + " does not have body data.");
+                Log.Error("AggroUp.RecalculateStats: " + sender.name + " does not have body data.");
 #endif
                 return;
             }
-            bodyData.aggroUp = inventory.GetItemCount(item);
+            if (!bodyDataHelper.invoker) return;
+            bodyDataHelper.invoker.aggroUp = inventory.GetItemCount(item);
         }
     }
 }
