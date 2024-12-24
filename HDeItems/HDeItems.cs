@@ -20,7 +20,7 @@ namespace HDeMods.HDeItems {
         // ReSharper disable once InconsistentNaming
         internal static AssetBundle HDeItemsBundle;
         internal static R2APISerializableContentPack pack;
-        internal static bool successfulHook;
+        internal static bool successfulHook = true;
         internal static void Startup() {
             if (!File.Exists(Assembly.GetExecutingAssembly().Location
                     .Replace("HDeItems.dll", "hdeitems"))) {
@@ -34,8 +34,8 @@ namespace HDeMods.HDeItems {
             pack = R2APIContentManager.ReserveSerializableContentPack();
             
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
-            CharacterBody.onBodyAwakeGlobal += BodyData.OnBodyAwakeGlobal;
             IL.RoR2.MasterCatalog.SetEntries += BodyData.MasterCatalog_SetEntries;
+            IL.RoR2.BodyCatalog.SetBodyPrefabs += BodyDataHelper.BodyCatalog_SetBodyPrefabs;
             Expansion.Init();
             AggroManager.Init();
 
@@ -66,25 +66,21 @@ namespace HDeMods.HDeItems {
             master.onBodyStart += GetBody;
         }
 
-        public static void OnBodyAwakeGlobal(CharacterBody body) {
-            body.gameObject.AddComponent<BodyDataHelper>();
-        }
-
         public static void MasterCatalog_SetEntries(ILContext il) {
             ILCursor c = new ILCursor(il);
+            int thing = 0;
             if (!c.TryGotoNext(moveType: MoveType.After,
                     x => x.MatchCallvirt<GameObject>("GetComponent"),
-                    x => x.MatchStloc(3)
+                    x => x.MatchStloc(out thing)
                 )) {
                 Log.Fatal("Failed to generate hook for MasterCatalog.SetEntries!");
+                ItemManager.successfulHook = false;
                 return;
             }
-            c.Emit(OpCodes.Ldloc_3);
+            c.Emit(OpCodes.Ldloc, thing);
             c.EmitDelegate<RuntimeILReferenceBag.FastDelegateInvokers.Action<CharacterMaster>>(characterMaster => {
                 characterMaster.gameObject.AddComponent<BodyData>();
             });
-            
-            ItemManager.successfulHook = true;
         }
 
         public void GetBody(CharacterBody characterBody) {
@@ -105,6 +101,24 @@ namespace HDeMods.HDeItems {
         public BodyData invoker;
         public void OnTakeDamageServer(DamageReport damageReport) => 
             invoker?.InvokeDamageReceivedServerEvent(damageReport);
+
+        public static void BodyCatalog_SetBodyPrefabs(ILContext il) {
+            ILCursor c = new ILCursor(il);
+            int thing = 0;
+            if (!c.TryGotoNext(moveType: MoveType.After,
+                    x => x.MatchCallvirt<GameObject>("GetComponent"),
+                    x => x.MatchDup(),
+                    x => x.MatchStloc(out thing)
+                )) {
+                Log.Fatal("Failed to generate hook for BodyCatalog.SetBodyPrefabs!");
+                ItemManager.successfulHook = false;
+                return;
+            }
+            c.Emit(OpCodes.Ldloc, thing);
+            c.EmitDelegate<RuntimeILReferenceBag.FastDelegateInvokers.Action<CharacterBody>>(body => {
+                body.gameObject.AddComponent<BodyDataHelper>();
+            });
+        }
     }
     
 
@@ -115,7 +129,7 @@ namespace HDeMods.HDeItems {
             
             Log.Debug("Loading HDeItems.");
             if (!ItemManager.successfulHook) {
-                Log.Fatal("MasterCatalogue wasn't hooked, aborting!");
+                Log.Fatal("One or more important hooks failed, aborting!");
                 return;
             }
             foreach (Type item in GetTypesWithHDeItemAttribute(Assembly.GetExecutingAssembly())) {
