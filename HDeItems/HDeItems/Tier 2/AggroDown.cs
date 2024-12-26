@@ -22,13 +22,12 @@ namespace HDeMods.HDeItems.Tier2 {
                 Log.Error("Failed to load " + nameof(AggroDown));
                 return;
             }
-            item.tier = ItemTier.Tier2;
             
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);
             
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStats;
-            Log.Debug("Successfully loaded " + nameof(AggroDown));
+            Log.Info("Successfully loaded " + nameof(AggroDown));
         }
 
         private static void RecalculateStats(CharacterBody sender, RecalculateStatsAPI.StatHookEventArgs args) {

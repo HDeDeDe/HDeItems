@@ -43,7 +43,7 @@ namespace HDeMods.HDeItems.Tier1 {
             rangeDisplayPrefab = temp.InstantiateClone("HDeItems_MouthwashRangeIndicator");
             Destroy(temp);
             
-            Log.Debug("Successfully loaded " + nameof(Mouthwash));
+            Log.Info("Successfully loaded " + nameof(Mouthwash));
         }
 
         public static void OnInventoryChangedGlobal(CharacterBody body) {

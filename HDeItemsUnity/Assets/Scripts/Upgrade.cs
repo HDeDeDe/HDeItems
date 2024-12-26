@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 
 public class Upgrade : MonoBehaviour {
@@ -17,3 +18,4 @@ public class Upgrade : MonoBehaviour {
         renderMe.materials = dupeMe;
     }
 }
+#endif

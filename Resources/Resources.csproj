@@ -9,6 +9,9 @@
         <Content Include="..\.gitignore">
             <Link>.gitignore</Link>
         </Content>
+        <Content Include="..\HDeItems.sln.DotSettings">
+          <Link>HDeItems.sln.DotSettings</Link>
+        </Content>
         <Content Include="..\README.md">
             <Link>README.md</Link>
         </Content>

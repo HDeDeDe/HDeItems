@@ -37,7 +37,7 @@ namespace $NAMESPACE$ {
             CustomItem customItem = new CustomItem(item, new[] { new ItemDisplayRule() });
             ItemAPI.Add(customItem);
             
-            Log.Debug("Successfully loaded " + nameof($CLASS$));
+            Log.Info("Successfully loaded " + nameof($CLASS$));
         }
     }
 }</s:String>

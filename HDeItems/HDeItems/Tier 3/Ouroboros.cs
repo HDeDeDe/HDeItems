@@ -26,7 +26,6 @@ namespace HDeMods.HDeItems.Tier3 {
                 Log.Error("Failed to load " + nameof(Ouroboros));
                 return;
             }
-            item.tier = ItemTier.Tier3;
 
             CustomItem customItem = new CustomItem(item, new[] { new ItemDisplayRule() });
             ItemAPI.Add(customItem);
@@ -36,7 +35,7 @@ namespace HDeMods.HDeItems.Tier3 {
             On.RoR2.CharacterMaster.Respawn += CharacterMaster_Respawn;
             RoR2Application.onLoad += OnLoad;
             
-            Log.Debug("Successfully loaded " + nameof(Ouroboros));
+            Log.Info("Successfully loaded " + nameof(Ouroboros));
         }
 
         private static CharacterBody CharacterMaster_Respawn(On.RoR2.CharacterMaster.orig_Respawn orig, 

@@ -32,7 +32,6 @@ namespace HDeMods.HDeItems.Tier2 {
                 Log.Error("Failed to load " + nameof(InfusionAttackSpeed));
                 return;
             }
-            item.tier = ItemTier.Tier2;
             
             CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
             ItemAPI.Add(customItem);
@@ -48,7 +47,7 @@ namespace HDeMods.HDeItems.Tier2 {
             GlobalEventManager.onCharacterDeathGlobal += OnCharacterDeath;
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStats;
             
-            Log.Debug("Successfully loaded " + nameof(InfusionAttackSpeed));
+            Log.Info("Successfully loaded " + nameof(InfusionAttackSpeed));
         }
 
         public static void OnCharacterDeath(DamageReport report) {
