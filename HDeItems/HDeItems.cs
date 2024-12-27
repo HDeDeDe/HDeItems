@@ -134,7 +134,7 @@ namespace HDeMods.HDeItems {
             }
             foreach (Type item in GetTypesWithHDeItemAttribute(Assembly.GetExecutingAssembly())) {
                 if (!TryCatchMe.Method(out MethodInfo initMethod, item, "HDeItem_Init")) {
-                    Log.Error(nameof(item) + " does not implement HDeItem_Init!");
+                    Log.Error(item + " does not implement HDeItem_Init!");
                     continue;
                 }
                 initMethod.Invoke(null, null);
@@ -157,16 +157,16 @@ namespace HDeMods.HDeItems {
             
             foreach (Type equipment in GetTypesWithHDeEquipmentAttribute(Assembly.GetExecutingAssembly())) {
                 if (!TryCatchMe.Method(out MethodInfo initMethod, equipment, "HDeEquipment_Init")) {
-                    Log.Error(nameof(equipment) + " does not implement HDeEquipment_Init!");
+                    Log.Error(equipment + " does not implement HDeEquipment_Init!");
                     continue;
                 }
                 initMethod.Invoke(null, null);
                 if (!TryCatchMe.PropertyEquipmentDef(out EquipmentDef currentEquipment, equipment, "Equipment")){
-                    Log.Error(nameof(equipment) + " does not have a valid Equipment property!");
+                    Log.Error(equipment + " does not have a valid Equipment property!");
                     continue;
                 }
                 if (!TryCatchMe.Method(out MethodInfo activateMethod, equipment, "HDeEquipment_Activate")){
-                    Log.Error(nameof(equipment) + " does not implement HDeEquipment_Activate!");
+                    Log.Error(equipment + " does not implement HDeEquipment_Activate!");
                     continue;
                 }
                 equipmentActivatorByDef.Add(currentEquipment, activateMethod);
@@ -188,23 +188,13 @@ namespace HDeMods.HDeItems {
 
     internal static class TryCatchMe {
         public static bool Method(out MethodInfo methodInfoToWriteTo, Type type, string methodName) {
-            try {
-                methodInfoToWriteTo = AccessTools.Method(type, methodName);
-            }
-            catch {
-                methodInfoToWriteTo = null;
-                return false;
-            }
+            methodInfoToWriteTo = AccessTools.Method(type, methodName);
+            if (methodInfoToWriteTo == null) return false;
             return true;
         }
         public static bool PropertyEquipmentDef(out EquipmentDef equipmentToWriteTo, Type type, string propertyName) {
-            try {
-                equipmentToWriteTo = (EquipmentDef)AccessTools.Property(type, propertyName).GetValue(null, null);
-            }
-            catch {
-                equipmentToWriteTo = null;
-                return false;
-            }
+            equipmentToWriteTo = (EquipmentDef)AccessTools.Property(type, propertyName).GetValue(null, null);
+            if (equipmentToWriteTo == null) return false;
             return true;
         }
     }
