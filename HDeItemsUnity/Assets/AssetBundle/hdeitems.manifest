@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1292064389
+CRC: 4257994538
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: fab9a06b6adc149464419ca90defbbe9
+    Hash: be09a25b35070c29061a2baef89839aa
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ad57158a98d8230f55a2942a603846f7
+    Hash: 00f612e70474378a9c92607e4232a218
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -34,6 +34,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
 - Class: 114
+  Script: {fileID: 1512808244, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: 802575700, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
@@ -50,6 +52,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: RoR2
+  ClassName: RoR2.MageElement
 - AssemblyName: Unity.TextMeshPro
   ClassName: TMPro.FaceInfo_Legacy
 - AssemblyName: Unity.TextMeshPro
@@ -81,14 +85,16 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: com.unity.multiplayer-hlapi.Runtime
   ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_Normal.png
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/StickerMat.mat
 - Assets/HDeItems/Expansion/HDeItemsExpansion.asset
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle_illum.png
 - Assets/HDeItems/Tier1/Mouthwash/HDe_MouthwashDef.asset
 - Assets/HDeItems/Tier2/AggroDown/texHDeAggroDown.png
-- Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
 - Assets/HDeItems/Expansion/HDeItemsExpansionSots.asset
 - Assets/HDeItems/Tier1/IonCube/texHDeIonCube.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.fbx
+- Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
 - Assets/HDeItems/Tier3/Ouroboros/Font/HEAVYWEIGHT.ttf
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Bottom.asset
 - Assets/HDeItems/Tier2/AggroDown/HDe_AggroDown.prefab
@@ -103,6 +109,7 @@ Assets:
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask.png
 - Assets/HDeItems/Tier2/AggroDown/8trackTape.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeedDef.asset
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_Normal.png
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/materials/DiskCardOverlay.mat
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/MetalSlider.asset
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Sticker01.001.asset
@@ -125,32 +132,37 @@ Assets:
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_AlbedoTransparency.png
 - Assets/HDeItems/Tier1/Mouthwash/Bottle.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/effects/WavesTexture_Brighter.png
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle.mat
 - Assets/HDeItems/Tier3/Ouroboros/mdlCard.prefab
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashRangeIndicator.prefab
 - Assets/HDeItems/Tier3/Ouroboros/Screen.mat
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle_geo.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Top.asset
 - Assets/HDeItems/Tier2/AggroDown/RES_8track.fbx
+- Assets/HDeItems/Eqipment/StasisRifle/HDe_StasisRifleDef.asset
 - Assets/HDeItems/Tier3/Ouroboros/Font/HEAVYWEIGHT SDF.asset
+- Assets/HDeItems/Eqipment/StasisRifle/HDe_StasisRifle.prefab
 - Assets/HDeItems/Expansion/HDeItemsExpansionSotv.asset
 - Assets/HDeItems/Tier1/Mouthwash/texNEWmouthwashBottle-Colour.png
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Magnetdisc.asset
 - Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
 - Assets/HDeItems/Tier3/Ouroboros/texHDeOurobot.png
+- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Magnetdisc.asset
 - Assets/HDeItems/Tier1/IonCube/IonCubeMat.mat
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/cards/diskcardscreen/diskcard_screenoverlay_f1.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
-- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
 - Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
 - Assets/HDeItems/Tier1/IonCube/precursor_crystal_cube.fbx
+- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
 - Assets/HDeItems/Tier1/IonCube/HDe_IonCubeDef.asset
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
 - Assets/HDeItems/Tier3/Ouroboros/HDe_Ouroboros.prefab
 - Assets/HDeItems/Tier3/Ouroboros/pic.png.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle_spec.png
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
-- Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle_normal.png
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle.png
 - Assets/HDeItems/Tier1/IonCube/precursor_crystal_cube_spec.png
-- Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/StickerMat.mat
 Dependencies: []

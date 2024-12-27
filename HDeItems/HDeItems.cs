@@ -47,6 +47,7 @@ namespace HDeMods.HDeItems {
             Options.RoO.AddButton("Reset to Default", "Items - Tier 1", Options.RoO.ResetToDefault);
             Options.RoO.AddButton("Reset to Default", "Items - Tier 2", Options.RoO.ResetToDefault);
             Options.RoO.AddButton("Reset to Default", "Items - Tier 3", Options.RoO.ResetToDefault);
+            Options.RoO.AddButton("Reset to Default", "Items - Equipment", Options.RoO.ResetToDefault);
         }
     }
     
