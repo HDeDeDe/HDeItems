@@ -175,8 +175,8 @@ namespace HDeMods.HDeItems {
 
         private static bool EquipmentSlot_PerformEquipmentAction(On.RoR2.EquipmentSlot.orig_PerformEquipmentAction orig, 
             EquipmentSlot self, EquipmentDef equipmentDef) {
-            if (equipmentActivatorByDef.ContainsKey(equipmentDef)) {
-                return (bool)equipmentActivatorByDef[equipmentDef].Invoke(null, new object[] {self});
+            if (equipmentActivatorByDef.TryGetValue(equipmentDef, out MethodInfo activate)) {
+                return (bool)activate.Invoke(null, new object[] {self});
             }
             return orig(self, equipmentDef);
         }
