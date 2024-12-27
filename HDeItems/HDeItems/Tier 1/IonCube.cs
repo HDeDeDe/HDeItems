@@ -3,7 +3,7 @@ using R2API;
 using BepInEx.Configuration;
 
 namespace HDeMods.HDeItems.Tier1 {
-    [HDeItem] public class IonCube {
+    /*[HDeItem] public class IonCube {
         public static ConfigEntry<bool> Enabled { get; set; }
         public static ItemDef item;
         
@@ -28,5 +28,5 @@ namespace HDeMods.HDeItems.Tier1 {
             
             Log.Info("Successfully loaded " + nameof(IonCube));
         }
-    }
+    }*/
 }
