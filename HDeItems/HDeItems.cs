@@ -121,7 +121,6 @@ namespace HDeMods.HDeItems {
             });
         }
     }
-    
 
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public sealed class HDeItem : Attribute {
@@ -136,10 +135,40 @@ namespace HDeMods.HDeItems {
             foreach (Type item in GetTypesWithHDeItemAttribute(Assembly.GetExecutingAssembly())) {
                 AccessTools.Method(item, "HDeItem_Init").Invoke(null, null);
             }
+            HDeEquipment.InitEquipment();
         }
 
         private static IEnumerable<Type> GetTypesWithHDeItemAttribute(Assembly assembly) {
             return assembly.GetTypes().Where(type => type.GetCustomAttributes(typeof(HDeItem), false).Length > 0);
+        }
+    }
+    
+    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
+    public sealed class HDeEquipment : Attribute {
+        private static Dictionary<EquipmentDef, MethodInfo> equipmentActivatorByDef = new Dictionary<EquipmentDef, MethodInfo>();
+        
+        internal static void InitEquipment() {
+            On.RoR2.EquipmentSlot.PerformEquipmentAction += EquipmentSlot_PerformEquipmentAction;
+            foreach (Type equipment in GetTypesWithHDeEquipmentAttribute(Assembly.GetExecutingAssembly())) {
+                AccessTools.Method(equipment, "HDeEquipment_Init").Invoke(null, null);
+                
+                equipmentActivatorByDef.Add(
+                    (EquipmentDef)AccessTools.Property(equipment, "Equipment").GetValue(null, null),
+                    AccessTools.Method(equipment, "HDeEquipment_Activate")
+                    );
+            }
+        }
+
+        private static bool EquipmentSlot_PerformEquipmentAction(On.RoR2.EquipmentSlot.orig_PerformEquipmentAction orig, 
+            EquipmentSlot self, EquipmentDef equipmentDef) {
+            if (equipmentActivatorByDef.ContainsKey(equipmentDef)) {
+                return (bool)equipmentActivatorByDef[equipmentDef].Invoke(null, new object[] {self});
+            }
+            return orig(self, equipmentDef);
+        }
+
+        private static IEnumerable<Type> GetTypesWithHDeEquipmentAttribute(Assembly assembly) {
+            return assembly.GetTypes().Where(type => type.GetCustomAttributes(typeof(HDeEquipment), false).Length > 0);
         }
     }
     

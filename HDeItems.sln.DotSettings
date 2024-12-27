@@ -1,6 +1,61 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CustomTools/CustomToolsData/@EntryValue"></s:String>
 	<s:Boolean x:Key="/Default/Environment/Hierarchy/Build/SolutionBuilderNext/InvokePreAndPostBuildEventTargetsForSkippedProjects/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=3263D38F49613C4881E59C46A2B6333C/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=3263D38F49613C4881E59C46A2B6333C/EntryName/@EntryValue">&lt;No Name&gt;</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=3263D38F49613C4881E59C46A2B6333C/Position/@EntryValue">11</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/CustomProperties/=FileName/@EntryIndexedValue">Class</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/CustomProperties/=ValidateFileName/@EntryIndexedValue">True</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Description/@EntryValue">&amp;HDeEquipment</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Field/=CLASS/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Field/=CLASS/Expression/@EntryValue">getAlphaNumericFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Field/=CLASS/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Field/=NAMESPACE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Field/=NAMESPACE/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Field/=NAMESPACE/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/Text/@EntryValue">using RoR2;
+using R2API;
+using BepInEx.Configuration;
+
+namespace $NAMESPACE$ {
+    [HDeEquipment] public class $CLASS$ {
+        public static ConfigEntry&lt;bool&gt; Enabled { get; set; }
+        public static EquipmentDef Equipment { get; set; }
+        
+        public static void HDeEquipment_Init() {
+            Enabled = Plugin.instance.Config.Bind&lt;bool&gt;(
+                "Items - Equipment",
+                "$CLASS$",
+                true,
+                "Enables ITEM_NAME_HERE."
+            );
+            if (Options.RoO.Enabled) Options.RoO.AddCheck(Enabled, true);
+
+            if (!Enabled.Value) return;
+            Equipment = ItemManager.HDeItemsBundle.LoadAsset&lt;EquipmentDef&gt;("HDe_$CLASS$Def");
+            if (Equipment == null) {
+                Log.Error("Failed to load " + nameof($CLASS$));
+                return;
+            }
+
+            CustomEquipment customEquipment = new CustomEquipment(Equipment, new[] { new ItemDisplayRule() });
+            ItemAPI.Add(customEquipment);
+            
+            Log.Info("Successfully loaded " + nameof($CLASS$));
+        }
+
+        public static bool HDeEquipment_Activate(EquipmentSlot self) {
+            return true;
+        }
+    }
+}</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/UITag/@EntryValue">Class/Interface</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
