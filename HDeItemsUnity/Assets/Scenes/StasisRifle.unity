@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 1, g: 1, b: 1, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -147,7 +147,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1027496320}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -293,8 +293,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053808712}
-  m_LocalRotation: {x: 0.096219964, y: 0.593023, z: -0.071739994, w: 0.7961902}
-  m_LocalPosition: {x: -5.034771, y: 1.1847272, z: -1.0775138}
+  m_LocalRotation: {x: 0.009718998, y: 0.98299974, z: -0.0549279, w: 0.1749287}
+  m_LocalPosition: {x: -1.3987403, y: 0.34196168, z: 4.278905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -330,19 +330,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8975105166447682226, guid: da2c552c3b686714b87896754ff86c16, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.9911076
       objectReference: {fileID: 0}
     - target: {fileID: 8975105166447682226, guid: da2c552c3b686714b87896754ff86c16, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.07515062
       objectReference: {fileID: 0}
     - target: {fileID: 8975105166447682226, guid: da2c552c3b686714b87896754ff86c16, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.032301262
       objectReference: {fileID: 0}
     - target: {fileID: 8975105166447682226, guid: da2c552c3b686714b87896754ff86c16, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.104951516
       objectReference: {fileID: 0}
     - target: {fileID: 8975105166447682226, guid: da2c552c3b686714b87896754ff86c16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

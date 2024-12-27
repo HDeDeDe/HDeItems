@@ -33,5 +33,6 @@
         <Content Include="Music_Casset_Render.png" />
         <Content Include="Ourobot_Render.png" />
         <Content Include="powder.blend" />
+        <Content Include="Stasis_Rifle_Render.png" />
     </ItemGroup>
 </Project>

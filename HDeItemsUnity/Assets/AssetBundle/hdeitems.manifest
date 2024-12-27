@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 4257994538
+CRC: 2936987215
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: be09a25b35070c29061a2baef89839aa
+    Hash: 07f997f6c91cce9a30ea1df03022e0fe
   TypeTreeHash:
     serializedVersion: 2
     Hash: 00f612e70474378a9c92607e4232a218
@@ -131,6 +131,7 @@ Assets:
 - Assets/HDeItems/Tier2/AggroUp/boomer_bile.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_AlbedoTransparency.png
 - Assets/HDeItems/Tier1/Mouthwash/Bottle.fbx
+- Assets/HDeItems/Eqipment/StasisRifle/texHDeStasisRifle.png
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/effects/WavesTexture_Brighter.png
 - Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle.mat
 - Assets/HDeItems/Tier3/Ouroboros/mdlCard.prefab
@@ -163,6 +164,6 @@ Assets:
 - Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 - Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle_normal.png
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
-- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle.png
 - Assets/HDeItems/Tier1/IonCube/precursor_crystal_cube_spec.png
+- Assets/HDeItems/Eqipment/StasisRifle/stasis_rifle.png
 Dependencies: []

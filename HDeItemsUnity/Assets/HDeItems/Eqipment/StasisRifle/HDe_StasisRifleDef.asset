@@ -19,10 +19,10 @@ MonoBehaviour:
   descriptionToken: HDE_STASISRIFLE_DESCRIPTION
   loreToken: HDE_STASISRIFLE_LORE
   isConsumed: 0
-  pickupIconSprite: {fileID: 0}
+  pickupIconSprite: {fileID: 21300000, guid: 507b7b3610bc87e4d8a0fd753b2c6290, type: 3}
   unlockableDef: {fileID: 0}
   colorIndex: 5
-  canDrop: 0
+  canDrop: 1
   dropOnDeathChance: 0
   canBeRandomlyTriggered: 1
   enigmaCompatible: 1
