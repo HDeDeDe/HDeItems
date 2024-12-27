@@ -121,7 +121,7 @@ namespace HDeMods.HDeItems {
             });
         }
     }
-
+    
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public sealed class HDeItem : Attribute {
         internal static void InitItems(On.RoR2.WwiseIntegrationManager.orig_Init origInit) {
@@ -133,7 +133,11 @@ namespace HDeMods.HDeItems {
                 return;
             }
             foreach (Type item in GetTypesWithHDeItemAttribute(Assembly.GetExecutingAssembly())) {
-                AccessTools.Method(item, "HDeItem_Init").Invoke(null, null);
+                if (!TryCatchMe.Method(out MethodInfo initMethod, item, "HDeItem_Init")) {
+                    Log.Error(nameof(item) + " does not implement HDeItem_Init!");
+                    continue;
+                }
+                initMethod.Invoke(null, null);
             }
             HDeEquipment.InitEquipment();
         }
@@ -145,17 +149,27 @@ namespace HDeMods.HDeItems {
     
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false)]
     public sealed class HDeEquipment : Attribute {
-        private static Dictionary<EquipmentDef, MethodInfo> equipmentActivatorByDef = new Dictionary<EquipmentDef, MethodInfo>();
+        private static readonly Dictionary<EquipmentDef, MethodInfo> equipmentActivatorByDef = 
+            new Dictionary<EquipmentDef, MethodInfo>();
         
         internal static void InitEquipment() {
             On.RoR2.EquipmentSlot.PerformEquipmentAction += EquipmentSlot_PerformEquipmentAction;
+            
             foreach (Type equipment in GetTypesWithHDeEquipmentAttribute(Assembly.GetExecutingAssembly())) {
-                AccessTools.Method(equipment, "HDeEquipment_Init").Invoke(null, null);
-                
-                equipmentActivatorByDef.Add(
-                    (EquipmentDef)AccessTools.Property(equipment, "Equipment").GetValue(null, null),
-                    AccessTools.Method(equipment, "HDeEquipment_Activate")
-                    );
+                if (!TryCatchMe.Method(out MethodInfo initMethod, equipment, "HDeEquipment_Init")) {
+                    Log.Error(nameof(equipment) + " does not implement HDeEquipment_Init!");
+                    continue;
+                }
+                initMethod.Invoke(null, null);
+                if (!TryCatchMe.PropertyEquipmentDef(out EquipmentDef currentEquipment, equipment, "Equipment")){
+                    Log.Error(nameof(equipment) + " does not have a valid Equipment property!");
+                    continue;
+                }
+                if (!TryCatchMe.Method(out MethodInfo activateMethod, equipment, "HDeEquipment_Activate")){
+                    Log.Error(nameof(equipment) + " does not implement HDeEquipment_Activate!");
+                    continue;
+                }
+                equipmentActivatorByDef.Add(currentEquipment, activateMethod);
             }
         }
 
@@ -169,6 +183,29 @@ namespace HDeMods.HDeItems {
 
         private static IEnumerable<Type> GetTypesWithHDeEquipmentAttribute(Assembly assembly) {
             return assembly.GetTypes().Where(type => type.GetCustomAttributes(typeof(HDeEquipment), false).Length > 0);
+        }
+    }
+
+    internal static class TryCatchMe {
+        public static bool Method(out MethodInfo methodInfoToWriteTo, Type type, string methodName) {
+            try {
+                methodInfoToWriteTo = AccessTools.Method(type, methodName);
+            }
+            catch {
+                methodInfoToWriteTo = null;
+                return false;
+            }
+            return true;
+        }
+        public static bool PropertyEquipmentDef(out EquipmentDef equipmentToWriteTo, Type type, string propertyName) {
+            try {
+                equipmentToWriteTo = (EquipmentDef)AccessTools.Property(type, propertyName).GetValue(null, null);
+            }
+            catch {
+                equipmentToWriteTo = null;
+                return false;
+            }
+            return true;
         }
     }
     
