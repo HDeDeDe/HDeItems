@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 858027276
+CRC: 1292064389
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: bfa3fdd93d98562dc1fa80ab9dba8c5e
+    Hash: fab9a06b6adc149464419ca90defbbe9
   TypeTreeHash:
     serializedVersion: 2
     Hash: ad57158a98d8230f55a2942a603846f7
@@ -87,6 +87,7 @@ Assets:
 - Assets/HDeItems/Tier2/AggroDown/texHDeAggroDown.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/FunnyMat.mat
 - Assets/HDeItems/Expansion/HDeItemsExpansionSots.asset
+- Assets/HDeItems/Tier1/IonCube/texHDeIonCube.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/powder.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Font/HEAVYWEIGHT.ttf
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Bottom.asset
@@ -118,6 +119,8 @@ Assets:
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfustionAttackSpeedDisplay.png
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Light01.mat
 - Assets/HDeItems/Tier3/Ouroboros/HDe_OuroborosDef.asset
+- Assets/HDeItems/Tier1/IonCube/HDe_IonCube.prefab
+- Assets/HDeItems/Tier1/IonCube/precursor_crystal_cube_normal.png
 - Assets/HDeItems/Tier2/AggroUp/boomer_bile.fbx
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/FloppyDisc_AlbedoTransparency.png
 - Assets/HDeItems/Tier1/Mouthwash/Bottle.fbx
@@ -133,17 +136,21 @@ Assets:
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/Magnetdisc.asset
 - Assets/HDeItems/Tier1/Mouthwash/HDe_Mouthwash.prefab
 - Assets/HDeItems/Tier3/Ouroboros/texHDeOurobot.png
+- Assets/HDeItems/Tier1/IonCube/IonCubeMat.mat
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/cards/diskcardscreen/diskcard_screenoverlay_f1.png
 - Assets/HDeItems/Tier1/Mouthwash/MouthwashMat.mat
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texHDeInfusionAttackSpeed.png
-- Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.png
+- Assets/HDeItems/Tier2/AggroUp/texHDeAggroUp.png
+- Assets/HDeItems/Tier1/IonCube/precursor_crystal_cube.fbx
+- Assets/HDeItems/Tier1/IonCube/HDe_IonCubeDef.asset
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/HDe_InfusionAttackSpeed.prefab
 - Assets/HDeItems/Tier3/Ouroboros/HDe_Ouroboros.prefab
 - Assets/HDeItems/Tier3/Ouroboros/pic.png.png
 - Assets/HDeItems/Tier2/InfusionAttackSpeed/texBdInfusionAttackSpeed.png
+- Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 - Assets/HDeItems/Tier2/AggroUp/v_bile_flask_cap.mat
 - Assets/HDeItems/Expansion/texHDeExpansionIcon.png
+- Assets/HDeItems/Tier1/IonCube/precursor_crystal_cube_spec.png
 - Assets/HDeItems/Tier3/Ouroboros/Resources/art/assets3d/card/floppydisccard/StickerMat.mat
-- Assets/HDeItems/Tier1/Mouthwash/texCloudDifferenceBW2.png
 Dependencies: []

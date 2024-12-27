@@ -58,6 +58,13 @@
     "HDE_OUROBOROS_LORE" : "<style=cMono>This item doesn't have proper lore right now.</style>\n\nOurobot from Inscryption. Every time it dies it gets stronger.",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_3.OUROBOROS.CHECKBOX.NAME" : "Ourobot",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_3.OUROBOROS.CHECKBOX.DESCRIPTION" : "Enables Ourobot. Default value is true. Requires restart.",
+
+    "HDE_IONCUBE_NAME" : "Ion Cube",
+    "HDE_IONCUBE_PICKUP" : "IDK lol",
+    "HDE_IONCUBE_DESCRIPTION" : "IDK lol",
+    "HDE_IONCUBE_LORE" : "Ion Cube from Subnautica.",
+    "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_1.IONCUBE.CHECKBOX.NAME" : "Ion Cube",
+    "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_1.IONCUBE.CHECKBOX.DESCRIPTION" : "Enables Ion Cube. Default value is true. Requires restart.",
     
     "HDE_FUNNY_LITTLE_GUY" : "This is just here so I can be lazy and have commas on all of the things."
   }
