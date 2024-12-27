@@ -1,11 +1,19 @@
 using RoR2;
 using R2API;
 using BepInEx.Configuration;
+using RoR2.Projectile;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace HDeMods.HDeItems.Equipment {
     [HDeEquipment] public static class StasisRifle {
         public static ConfigEntry<bool> Enabled { get; set; }
         public static EquipmentDef Equipment { get; set; }
+
+        public static readonly float rifleDamage = 50f;
+        public static readonly float rifleForce = 10f;
+
+        private static GameObject iceSpearPrefab;
         
         public static void HDeEquipment_Init() {
             Enabled = Plugin.instance.Config.Bind<bool>(
@@ -23,6 +31,9 @@ namespace HDeMods.HDeItems.Equipment {
                 return;
             }
 
+            iceSpearPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mage/MageIceBombProjectile.prefab")
+                .WaitForCompletion();
+
             CustomEquipment customEquipment = new CustomEquipment(Equipment, new[] { new ItemDisplayRule() });
             ItemAPI.Add(customEquipment);
             
@@ -30,6 +41,21 @@ namespace HDeMods.HDeItems.Equipment {
         }
 
         public static bool HDeEquipment_Activate(EquipmentSlot self) {
+            Ray aimRay = self.GetAimRay();
+            
+            FireProjectileInfo fireProjectileInfo = new FireProjectileInfo {
+                projectilePrefab = iceSpearPrefab,
+                position = aimRay.origin,
+                rotation = Util.QuaternionSafeLookRotation(aimRay.direction),
+                owner = self.gameObject,
+                damage = self.characterBody.damage * rifleDamage,
+                force = rifleForce,
+                crit = self.characterBody.RollCrit(),
+                damageTypeOverride = new DamageTypeCombo(
+                    DamageType.Freeze2s, DamageTypeExtended.Generic, DamageSource.NoneSpecified)
+            };
+            TrajectoryAimAssist.ApplyTrajectoryAimAssist(ref aimRay, ref fireProjectileInfo, 1f);
+            ProjectileManager.instance.FireProjectile(fireProjectileInfo);
             return true;
         }
     }
