@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using HarmonyLib;
 using ShaderSwapper;
 using UnityEngine;
@@ -14,6 +15,7 @@ using R2API.ScriptableObjects;
 using RoR2;
 using UnityEngine.Networking;
 using R2API;
+using SimpleJSON;
 
 namespace HDeMods.HDeItems {
     public static class ItemManager {
@@ -21,6 +23,9 @@ namespace HDeMods.HDeItems {
         internal static AssetBundle HDeItemsBundle;
         internal static R2APISerializableContentPack pack;
         internal static bool successfulHook = true;
+        internal static JSONNode displayRules;
+        internal static bool displayRulesLoaded;
+        
         internal static void Startup() {
             if (!File.Exists(Assembly.GetExecutingAssembly().Location
                     .Replace("HDeItems.dll", "hdeitems"))) {
@@ -32,6 +37,8 @@ namespace HDeMods.HDeItems {
                 .Location.Replace("HDeItems.dll", "hdeitems"));
             Plugin.instance.StartCoroutine(HDeItemsBundle.UpgradeStubbedShadersAsync());
             pack = R2APIContentManager.ReserveSerializableContentPack();
+
+            displayRulesLoaded = LoadItemDisplays();
             
             On.RoR2.WwiseIntegrationManager.Init += HDeItem.InitItems;
             IL.RoR2.MasterCatalog.SetEntries += BodyData.MasterCatalog_SetEntries;
@@ -49,6 +56,100 @@ namespace HDeMods.HDeItems {
             Options.RoO.AddButton("Reset to Default", "Items - Tier 3", Options.RoO.ResetToDefault);
             Options.RoO.AddButton("Reset to Default", "Items - Equipment", Options.RoO.ResetToDefault);
         }
+
+        internal static bool LoadItemDisplays() {
+            if (!File.Exists(Assembly.GetExecutingAssembly().Location
+                    .Replace("HDeItems.dll", "HDeItems.itemdisplayrules"))) {
+                Log.Error("Could not find display rules, items will not appear on bodies!");
+                return false;
+            }
+            
+            using Stream stream = File.Open(Assembly.GetExecutingAssembly().Location
+                .Replace("HDeItems.dll", "HDeItems.itemdisplayrules"), FileMode.Open, FileAccess.Read);
+            using StreamReader streamReader = new StreamReader(stream, Encoding.UTF8);
+            JSONNode jsonNode = JSON.Parse(streamReader.ReadToEnd());
+            if (jsonNode == null) {
+                Log.Error("Display rules appear to be missing, items will not appear on bodies!");
+                return false;
+            }
+            displayRules = jsonNode["DisplayRules"];
+            if (displayRules != null) return true;
+            Log.Error("Display rules appear to be corrupted, items will not appear on bodies!");
+            return false;
+        }
+        
+        /*
+        {bodyName}: {{
+             "modelName": {modelName},
+             "childName": {childName},
+             "localPos": "{localPos.x:5},{localPos.y:5},{localPos.z:5}",
+             "localAngles": "{localAngles.x:5},{localAngles.y:5},{localAngles.z:5}",
+             "localScale": "{localScale.x:5},{localScale.y:5},{localScale.z:5}"
+         }}
+         */
+
+        internal static ItemDisplayRuleDict GetDisplayRules(string type, ItemDef item, ItemDisplayRuleType ruleType) {
+            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
+            dict.Add("", new [] {
+                new ItemDisplayRule {
+                    ruleType = ruleType,
+                    followerPrefab = item.pickupModelPrefab,
+                    childName = "Pelvis", 
+                    localPos = Vector3.zero,
+                    localAngles = Vector3.zero,
+                    localScale = Vector3.one
+                } });
+            if (!displayRulesLoaded) return dict;
+            if (displayRules[type] == null) {
+                Log.Error("No item display rules exist for " + type + ".");
+                return dict;
+            }
+            foreach (JSONNode node in displayRules[type].Children) {
+                dict.Add(node["modelName"].Value, new [] {
+                    new ItemDisplayRule {
+                        ruleType = ruleType,
+                        followerPrefab = item.pickupModelPrefab,
+                        childName = node["childName"].Value, 
+                        localPos = ConvertToV3(node["localPos"].Value.Split(',', 3)),
+                        localAngles = ConvertToV3(node["localAngles"].Value.Split(',', 3)),
+                        localScale = ConvertToV3(node["localScale"].Value.Split(',', 3))
+                    } });
+            }
+            return dict;
+        }
+        
+        internal static ItemDisplayRuleDict GetDisplayRules(string type, EquipmentDef item, ItemDisplayRuleType ruleType) {
+            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
+            dict.Add("", new [] {
+                new ItemDisplayRule {
+                    ruleType = ruleType,
+                    followerPrefab = item.pickupModelPrefab,
+                    childName = "Pelvis", 
+                    localPos = Vector3.zero,
+                    localAngles = Vector3.zero,
+                    localScale = Vector3.one
+                } });
+            if (!displayRulesLoaded) return dict;
+            if (displayRules[type] == null) {
+                Log.Error("No item display rules exist for " + type + ".");
+                return dict;
+            }
+            foreach (JSONNode node in displayRules[type].Children) {
+                dict.Add(node["modelName"].Value, new [] {
+                    new ItemDisplayRule {
+                        ruleType = ruleType,
+                        followerPrefab = item.pickupModelPrefab,
+                        childName = node["childName"].Value, 
+                        localPos = ConvertToV3(node["localPos"].Value.Split(',', 3)),
+                        localAngles = ConvertToV3(node["localAngles"].Value.Split(',', 3)),
+                        localScale = ConvertToV3(node["localScale"].Value.Split(',', 3))
+                    } });
+            }
+            return dict;
+        }
+        
+        private static Vector3 ConvertToV3(String[] strings) => new Vector3(float.Parse(strings[0].Trim('F')), 
+                float.Parse(strings[1].Trim('F')), float.Parse(strings[2].Trim('F')));
     }
     
     public class BodyData : NetworkBehaviour {

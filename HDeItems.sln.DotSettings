@@ -44,7 +44,8 @@ namespace $NAMESPACE$ {
                 return;
             }
 
-            CustomEquipment customEquipment = new CustomEquipment(Equipment, new[] { new ItemDisplayRule() });
+            CustomEquipment customEquipment = new CustomEquipment(Equipment, 
+                ItemManager.GetDisplayRules(nameof($CLASS$), Equipment, ItemDisplayRuleType.ParentedPrefab));
             ItemAPI.Add(customEquipment);
             
             Log.Info("Successfully loaded " + nameof($CLASS$));
@@ -52,22 +53,6 @@ namespace $NAMESPACE$ {
 
         public static bool HDeEquipment_Activate(EquipmentSlot self) {
             return true;
-        }
-    }
-	
-    internal static class $CLASS$ItemDisplays {
-        public static ItemDisplayRuleDict Dict() {
-            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
-            dict.Add("", new [] {
-                    new ItemDisplayRule {
-                        ruleType = ItemDisplayRuleType.ParentedPrefab,
-                        followerPrefab = $CLASS$.Equipment.pickupModelPrefab,
-                        childName = "Pelvis", 
-                        localPos = Vector3.zero,
-                        localAngles = Vector3.zero,
-                        localScale = Vector3.one
-                    } });
-            return dict;
         }
     }
 }</s:String>
@@ -104,27 +89,12 @@ namespace $NAMESPACE$ {
                 Log.Error("Failed to load " + nameof($CLASS$));
                 return;
             }
-
-            CustomItem customItem = new CustomItem(item, $CLASS$ItemDisplays.Dict());
+        
+            CustomItem customItem = new CustomItem(item, 
+                ItemManager.GetDisplayRules(nameof($CLASS$), item, ItemDisplayRuleType.ParentedPrefab));
             ItemAPI.Add(customItem);
             
             Log.Info("Successfully loaded " + nameof($CLASS$));
-        }
-    }
-
-    internal static class $CLASS$ItemDisplays {
-        public static ItemDisplayRuleDict Dict() {
-            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
-            dict.Add("", new [] {
-                    new ItemDisplayRule {
-                        ruleType = ItemDisplayRuleType.ParentedPrefab,
-                        followerPrefab = $CLASS$.item.pickupModelPrefab,
-                        childName = "Pelvis", 
-                        localPos = Vector3.zero,
-                        localAngles = Vector3.zero,
-                        localScale = Vector3.one
-                    } });
-            return dict;
         }
     }
 }</s:String>

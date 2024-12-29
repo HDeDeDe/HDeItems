@@ -24,6 +24,7 @@
         <Content Include="CasetteBig.png" />
         <Content Include="CrackBig.png" />
         <Content Include="crack_render.png" />
+        <Content Include="HDeItems.itemdisplayrules" />
         <Content Include="HDeItems.language" />
         <Content Include="icon.png" />
         <Content Include="Ion_Cube_Render.png" />

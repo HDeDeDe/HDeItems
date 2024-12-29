@@ -27,7 +27,8 @@ namespace HDeMods.HDeItems.Tier3 {
                 return;
             }
 
-            CustomItem customItem = new CustomItem(item, OuroborosItemDisplays.Dict());
+            CustomItem customItem = new CustomItem(item, 
+                ItemManager.GetDisplayRules(nameof(Ouroboros), item, ItemDisplayRuleType.ParentedPrefab) );
             ItemAPI.Add(customItem);
             
             CharacterBody.onBodyInventoryChangedGlobal += OnInventoryChangedGlobal;
@@ -101,58 +102,6 @@ namespace HDeMods.HDeItems.Tier3 {
             float damageMult = body.damage * body.inventory.GetItemCount(item);
             damageMult *= bodyData.ouroborosBonus;
             damageInfo.damage += damageMult;
-        }
-    }
-    
-    internal static class OuroborosItemDisplays { 
-        public static ItemDisplayRuleDict Dict() {
-            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
-            dict.Add("", new [] {
-                new ItemDisplayRule {
-                    ruleType = ItemDisplayRuleType.ParentedPrefab,
-                    followerPrefab = Ouroboros.item.pickupModelPrefab,
-                    childName = "Pelvis", 
-                    localPos = Vector3.zero,
-                    localAngles = Vector3.zero,
-                    localScale = Vector3.one
-                } });
-            dict.Add("mdlCaptain", new [] {
-                new ItemDisplayRule {
-                    ruleType = ItemDisplayRuleType.ParentedPrefab,
-                    followerPrefab = Ouroboros.item.pickupModelPrefab,
-                    childName = "MuzzleGun",
-                    localPos = new Vector3(0.00199F, 0.03108F, 0.03413F),
-                    localAngles = new Vector3(294.3165F, 273.2378F, 352.7377F),
-                    localScale = new Vector3(0.0859F, 0.0859F, 0.0859F)
-                } });
-            dict.Add("mdlCroco", new [] {
-                new ItemDisplayRule {
-                    ruleType = ItemDisplayRuleType.ParentedPrefab,
-                    followerPrefab = Ouroboros.item.pickupModelPrefab,
-                    childName = "Finger11R",
-                    localPos = new Vector3(0.29144F, 0.53971F, 0.3068F),
-                    localAngles = new Vector3(1.69213F, 341.5157F, 261.3066F),
-                    localScale = new Vector3(1F, 1F, 1F)
-                } });
-            dict.Add("mdlSeeker", new [] {
-                new ItemDisplayRule {
-                    ruleType = ItemDisplayRuleType.ParentedPrefab,
-                    followerPrefab = Ouroboros.item.pickupModelPrefab,
-                    childName = "HandL",
-                    localPos = new Vector3(-0.00014F, 0.03745F, 0.02692F),
-                    localAngles = new Vector3(22.19945F, 346.8863F, 1.49889F),
-                    localScale = new Vector3(0.07501F, 0.07501F, 0.07501F)
-                } });
-            dict.Add("mdlFalseSon", new [] {
-                new ItemDisplayRule {
-                    ruleType = ItemDisplayRuleType.ParentedPrefab,
-                    followerPrefab = Ouroboros.item.pickupModelPrefab,
-                    childName = "HandR",
-                    localPos = new Vector3(0.07315F, 0.31218F, 0.01564F),
-                    localAngles = new Vector3(11.84246F, 128.1426F, 82.2345F),
-                    localScale = new Vector3(0.12908F, 0.12908F, 0.12908F)
-                } });
-            return dict;
         }
     }
 }

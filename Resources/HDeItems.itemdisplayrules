@@ -1,0 +1,196 @@
+{
+    "DisplayRules" : {
+        "Mouthwash" : {
+            "CaptainBody": {
+                "modelName" : "mdlCaptain", 
+                "childName": "ThighL",
+                "localPos": "0.09907F,0.31531F,0.12536F",
+                "localAngles": "5.91019F,233.3841F,182.2552F",
+                "localScale": "0.68848F,0.68848F,0.68848F"
+            },
+            "CrocoBody": {
+                "modelName" : "mdlCroco",
+                "childName": "MouthMuzzle",
+                "localPos": "-2.25849F,1.75344F,1.86785F",
+                "localAngles": "67.92722F,6.17886F,254.4054F",
+                "localScale": "4.8312F,4.8312F,4.8312F"
+            },
+            "SeekerBody": {
+                "modelName" : "mdlSeeker",
+                "childName": "Pack",
+                "localPos": "-0.14047F,0.05488F,-0.21642F",
+                "localAngles": "359.3977F,356.4049F,45.52491F",
+                "localScale": "1F,1F,1F"
+            },
+            "FalseSonBody": {
+                "modelName" : "mdlFalseSon",
+                "childName": "Head",
+                "localPos": "0.0247F,0.20892F,0.46259F",
+                "localAngles": "359.8492F,93.74285F,267.8969F",
+                "localScale": "1F,1F,1F"
+            },
+            "CommandoBody": {
+                "modelName" : "mdlCommandoDualies",
+                "childName": "ThighL",
+                "localPos": "0.13725F,0.17233F,0.02598F",
+                "localAngles": "354.4113F,249.3478F,179.1616F",
+                "localScale": "0.56617F,0.56617F,0.56617F"
+            },
+            "HereticBody": {
+                "modelName" : "mdlHeretic",
+                "childName": "Head",
+                "localPos": "0.25489F,0.65749F,-0.22725F",
+                "localAngles": "335.2906F,263.5544F,215.4086F",
+                "localScale": "1F,1F,1F"
+            }
+        },
+        "StasisRifle" : {
+            "CaptainBody": {
+                "modelName": "mdlCaptain",
+                "childName": "ClavicleL",
+                "localPos": "0.26582F,-0.04032F,-0.08319F",
+                "localAngles": "18.86092F,61.65621F,234.6299F",
+                "localScale": "0.13468F,0.13468F,0.13468F"
+            },
+            "CrocoBody": {
+                "modelName": "mdlCroco",
+                "childName": "UpperArmL",
+                "localPos": "-2.03923F,0.4199F,-1.05398F",
+                "localAngles": "11.97096F,196.9454F,195.2424F",
+                "localScale": "1.38521F,1.38521F,1.38521F"
+            },
+            "SeekerBody": {
+                "modelName": "mdlSeeker",
+                "childName": "Chest",
+                "localPos": "-0.16253F,0.40363F,0.14797F",
+                "localAngles": "342.3047F,3.03117F,2.69013F",
+                "localScale": "0.14505F,0.14505F,0.14505F"
+            },
+            "FalseSonBody": {
+                "modelName": "mdlFalseSon",
+                "childName": "ClavL",
+                "localPos": "0.14317F,0.47536F,-0.32542F",
+                "localAngles": "10.87764F,106.5215F,266.3787F",
+                "localScale": "0.21835F,0.21835F,0.21835F"
+            },
+            "CommandoBody": {
+                "modelName": "mdlCommandoDualies",
+                "childName": "GunMeshR",
+                "localPos": "-0.35688F,0.00362F,0.14614F",
+                "localAngles": "357.7778F,273.5841F,266.5621F",
+                "localScale": "0.22777F,0.22777F,0.22777F"
+            }
+        },
+        "Ouroboros" : {
+            "CaptainBody": {
+                "modelName": "mdlCaptain",
+                "childName": "MuzzleGun",
+                "localPos": "0.00199F,0.03108F,0.03413F",
+                "localAngles": "294.3165F,273.2378F,352.7377F",
+                "localScale": "0.0859F,0.0859F,0.0859F"
+            },
+            "CrocoBody": {
+                "modelName": "mdlCroco",
+                "childName": "Finger11R",
+                "localPos": "0.29144F,0.53971F,0.3068F",
+                "localAngles": "1.69213F,341.5157F,261.3066F",
+                "localScale": "1F,1F,1F"
+            },
+            "SeekerBody": {
+                "modelName": "mdlSeeker",
+                "childName": "HandL",
+                "localPos": "-0.00014F,0.03745F,0.02692F",
+                "localAngles": "22.19945F,346.8863F,1.49889F",
+                "localScale": "0.07501F,0.07501F,0.07501F"
+            },
+            "FalseSonBody": {
+                "modelName": "mdlFalseSon",
+                "childName": "HandR",
+                "localPos": "0.07315F,0.31218F,0.01564F",
+                "localAngles": "11.84246F,128.1426F,82.2345F",
+                "localScale": "0.12908F,0.12908F,0.12908F"
+            },
+            "CommandoBody": {
+                "modelName": "mdlCommandoDualies",
+                "childName": "Chest",
+                "localPos": "-0.00137F,0.17199F,0.2092F",
+                "localAngles": "27.08798F,359.2762F,358.0085F",
+                "localScale": "0.07756F,0.07756F,0.07756F"
+            }
+        },
+        "AggroDown": {
+            "CaptainBody": {
+                "modelName": "mdlCaptain",
+                "childName": "Pelvis",
+                "localPos": "0.05939F,-0.14319F,-0.19125F",
+                "localAngles": "320.9315F,178.0158F,159.9391F",
+                "localScale": "0.03587F,0.03587F,0.03587F"
+            },
+            "CrocoBody": {
+                "modelName": "mdlCroco",
+                "childName": "LowerArmR",
+                "localPos": "1.1954F,3.50799F,0.22777F",
+                "localAngles": "19.52925F,75.19996F,345.0016F",
+                "localScale": "0.4365F,0.4365F,0.4365F"
+            },
+            "SeekerBody": {
+                "modelName": "mdlSeeker",
+                "childName": "ThighL",
+                "localPos": "-0.08133F,0.09759F,-0.10975F",
+                "localAngles": "351.662F,207.5618F,152.1761F",
+                "localScale": "0.05069F,0.05069F,0.05069F"
+            },
+            "FalseSonBody": {
+                "modelName": "mdlFalseSon",
+                "childName": "Head",
+                "localPos": "-0.17879F,0.108F,0.03433F",
+                "localAngles": "27.36147F,270.0096F,340.8546F",
+                "localScale": "0.06671F,0.06671F,0.06671F"
+            },
+            "CommandoBody": {
+                "modelName": "mdlCommandoDualies",
+                "childName": "Pelvis",
+                "localPos": "0.16357F,-0.07124F,-0.05012F",
+                "localAngles": "335.0996F,288.5809F,160.7539F",
+                "localScale": "0.03824F,0.03824F,0.03824F"
+            }
+        },
+        "AggroUp": {
+            "CaptainBody": {
+                "modelName": "mdlCaptain",
+                "childName": "Chest",
+                "localPos": "0.22936F,0.15437F,0.20492F",
+                "localAngles": "25.8474F,338.3632F,3.01506F",
+                "localScale": "0.20412F,0.20412F,0.20412F"
+            },
+            "CrocoBody": {
+                "modelName": "mdlCroco",
+                "childName": "MuzzleHandL",
+                "localPos": "0.55362F,0.29384F,0.19695F",
+                "localAngles": "18.69648F,93.08538F,20.37013F",
+                "localScale": "1.58809F,1.58809F,1.58809F"
+            },
+            "SeekerBody": {
+                "modelName": "mdlSeeker",
+                "childName": "Pelvis",
+                "localPos": "0.08417F,0.00688F,0.1085F",
+                "localAngles": "34.85723F,359.8937F,0.10785F",
+                "localScale": "0.17757F,0.17757F,0.17757F"
+            },
+            "FalseSonBody": {
+                "modelName": "mdlFalseSon",
+                "childName": "HandL",
+                "localPos": "0.02985F,0.15759F,0.14391F",
+                "localAngles": "353.3982F,324.8724F,303.6209F",
+                "localScale": "0.1963F,0.1963F,0.1963F"
+            },
+            "CommandoBody": {
+                "modelName": "mdlCommandoDualies",
+                "childName": "Chest",
+                "localPos": "0.0959F,0.17847F,0.2431F",
+                "localAngles": "59.25008F,178.8898F,179.369F",
+                "localScale": "0.10229F,0.10229F,0.10229F"
+            }
+        }
+    }
+}

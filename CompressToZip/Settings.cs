@@ -20,7 +20,8 @@ internal static class Settings {
 
     public static readonly ArrayList extraFiles = new() {
         new FileInfo("../HDeItemsUnity/Assets/AssetBundle/hdeitems"),
-        new FileInfo("../Resources/HDeItems.language")
+        new FileInfo("../Resources/HDeItems.language"),
+        new FileInfo("../Resources/HDeItems.itemdisplayrules"),
     };
 
     public const string manifestWebsiteUrl = "https://github.com/HDeDeDe/HDeItems";
