@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8975105166447682226}
   - component: {fileID: 8975105166447682225}
+  - component: {fileID: 3489089210059637096}
   m_Layer: 0
   m_Name: HDe_StasisRifle
   m_TagString: Untagged
@@ -52,6 +53,25 @@ MonoBehaviour:
   modelRotation: {x: 0, y: 0, z: 0, w: 1}
   minDistance: 2.45
   maxDistance: 10
+--- !u!114 &3489089210059637096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8975105166447682224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererInfos:
+  - renderer: {fileID: 7731676952972471299}
+    defaultMaterial: {fileID: 2100000, guid: eda2273ef92794f43b756f7aa919aacd, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  hideOnDeathObjects: []
 --- !u!1 &8975105166702515845
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1cee240fbeeadf04c93e0d85b907c0bb, type: 3}
+--- !u!23 &7731676952972471299 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 1cee240fbeeadf04c93e0d85b907c0bb, type: 3}
+  m_PrefabInstance: {fileID: 8975105166002696327}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8865129045950486380 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1cee240fbeeadf04c93e0d85b907c0bb, type: 3}

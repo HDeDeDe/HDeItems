@@ -471,10 +471,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: MouthwashRangeIndicator
       objectReference: {fileID: 0}
-    - target: {fileID: 8799336198466308491, guid: 4adbb0deb2cadda4d844cef24bfc7f80, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4adbb0deb2cadda4d844cef24bfc7f80, type: 3}
 --- !u!1001 &7622086656857578926

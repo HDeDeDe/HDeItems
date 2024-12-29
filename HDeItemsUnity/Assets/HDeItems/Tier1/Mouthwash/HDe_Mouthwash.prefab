@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5893368838787501011}
   - component: {fileID: 7122201217014326970}
+  - component: {fileID: 859904960926100344}
   m_Layer: 0
   m_Name: HDe_Mouthwash
   m_TagString: Untagged
@@ -83,6 +84,25 @@ MonoBehaviour:
   modelRotation: {x: 0, y: 0, z: 0, w: 1}
   minDistance: 0.2
   maxDistance: 1
+--- !u!114 &859904960926100344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8381767398973256614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererInfos:
+  - renderer: {fileID: 2932685996792914295}
+    defaultMaterial: {fileID: 2100000, guid: d4bc458b371f30443b2cf14d0534fef0, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  hideOnDeathObjects: []
 --- !u!1 &8487736740669061755
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,6 +211,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41f9531fa68aefe4485b0f4ebf6bdaff, type: 3}
+--- !u!23 &2932685996792914295 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 41f9531fa68aefe4485b0f4ebf6bdaff, type: 3}
+  m_PrefabInstance: {fileID: 4572116525904313843}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4105544244121655832 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 41f9531fa68aefe4485b0f4ebf6bdaff, type: 3}

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2936987215
+CRC: 879762903
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 07f997f6c91cce9a30ea1df03022e0fe
+    Hash: b1a4199c33353202994a6fbfbaac6210
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 00f612e70474378a9c92607e4232a218
+    Hash: c1a27406af251bfd549aeb3ed56db709
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,6 +40,8 @@ ClassTypes:
 - Class: 114
   Script: {fileID: -1284244208, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
+  Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
   Script: {fileID: -1864444436, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 115
   Script: {instanceID: 0}
@@ -52,6 +54,8 @@ ClassTypes:
 - Class: 224
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers:
+- AssemblyName: RoR2
+  ClassName: RoR2.CharacterModel/RendererInfo
 - AssemblyName: RoR2
   ClassName: RoR2.MageElement
 - AssemblyName: Unity.TextMeshPro

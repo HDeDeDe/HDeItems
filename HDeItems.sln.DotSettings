@@ -54,6 +54,22 @@ namespace $NAMESPACE$ {
             return true;
         }
     }
+	
+    internal static class $CLASS$ItemDisplays {
+        public static ItemDisplayRuleDict Dict() {
+            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
+            dict.Add("", new [] {
+                    new ItemDisplayRule {
+                        ruleType = ItemDisplayRuleType.ParentedPrefab,
+                        followerPrefab = $CLASS$.Equipment.pickupModelPrefab,
+                        childName = "Pelvis", 
+                        localPos = Vector3.zero,
+                        localAngles = Vector3.zero,
+                        localScale = Vector3.one
+                    } });
+            return dict;
+        }
+    }
 }</s:String>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3263D38F49613C4881E59C46A2B6333C/UITag/@EntryValue">Class/Interface</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FDC86B4D5F714E4795BA70D30E6F6E42/@KeyIndexDefined">True</s:Boolean>
@@ -89,10 +105,26 @@ namespace $NAMESPACE$ {
                 return;
             }
 
-            CustomItem customItem = new CustomItem(item, new[] { new ItemDisplayRule() });
+            CustomItem customItem = new CustomItem(item, $CLASS$ItemDisplays.Dict());
             ItemAPI.Add(customItem);
             
             Log.Info("Successfully loaded " + nameof($CLASS$));
+        }
+    }
+
+    internal static class $CLASS$ItemDisplays {
+        public static ItemDisplayRuleDict Dict() {
+            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
+            dict.Add("", new [] {
+                    new ItemDisplayRule {
+                        ruleType = ItemDisplayRuleType.ParentedPrefab,
+                        followerPrefab = $CLASS$.item.pickupModelPrefab,
+                        childName = "Pelvis", 
+                        localPos = Vector3.zero,
+                        localAngles = Vector3.zero,
+                        localScale = Vector3.one
+                    } });
+            return dict;
         }
     }
 }</s:String>

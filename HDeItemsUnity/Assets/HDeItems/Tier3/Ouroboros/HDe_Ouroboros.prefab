@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6904078221478856409}
   - component: {fileID: 3039124301401215149}
+  - component: {fileID: 1232753076279856242}
   m_Layer: 0
   m_Name: HDe_Ouroboros
   m_TagString: Untagged
@@ -52,6 +53,40 @@ MonoBehaviour:
   modelRotation: {x: 0, y: 0, z: 0, w: 1}
   minDistance: 1
   maxDistance: 5
+--- !u!114 &1232753076279856242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1793224793305649793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererInfos:
+  - renderer: {fileID: 4217042161866133896}
+    defaultMaterial: {fileID: 2100000, guid: bf5bc2739dbe2534a8271178f0f90b99, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 8747326452959474049}
+    defaultMaterial: {fileID: 2100000, guid: 78f7cd822f1ada046a52458a4ccf00ff, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 3047019608029839059}
+    defaultMaterial: {fileID: 2100000, guid: 1bccfaafe595176418608ee794dc951b, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  - renderer: {fileID: 4825310906773692122}
+    defaultMaterial: {fileID: 3546239423999456467, guid: 5119fad139cc3e14faca37d8fd8eb57b, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  hideOnDeathObjects: []
 --- !u!1 &1925006335662148722
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,5 +603,10 @@ PrefabInstance:
 --- !u!4 &3084646183897901799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f97d908742884f84e93652f394f113c3, type: 3}
+  m_PrefabInstance: {fileID: 3261842123259038988}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4217042161866133896 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f97d908742884f84e93652f394f113c3, type: 3}
   m_PrefabInstance: {fileID: 3261842123259038988}
   m_PrefabAsset: {fileID: 0}

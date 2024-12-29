@@ -23,10 +23,26 @@ namespace HDeMods.HDeItems.Tier1 {
                 return;
             }
 
-            CustomItem customItem = new CustomItem(item, new[] { new ItemDisplayRule() });
+            CustomItem customItem = new CustomItem(item, IonCubeItemDisplays.Dict());
             ItemAPI.Add(customItem);
             
             Log.Info("Successfully loaded " + nameof(IonCube));
+        }
+    }
+    
+    internal static class IonCubeItemDisplays {
+        public static ItemDisplayRuleDict Dict() {
+            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
+            dict.Add("", new [] {
+                    new ItemDisplayRule {
+                        ruleType = ItemDisplayRuleType.ParentedPrefab,
+                        followerPrefab = IonCube.item.pickupModelPrefab,
+                        childName = "Pelvis", 
+                        localPos = Vector3.zero,
+                        localAngles = Vector3.zero,
+                        localScale = Vector3.one
+                    } });
+            return dict;
         }
     }*/
 }

@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5573873375814730952}
   - component: {fileID: 5573873375814730953}
+  - component: {fileID: 1259282814057664109}
   m_Layer: 0
   m_Name: HDe_IonCube
   m_TagString: Untagged
@@ -83,6 +84,25 @@ MonoBehaviour:
   modelRotation: {x: 0, y: 0, z: 0, w: 1}
   minDistance: 0.8
   maxDistance: 3
+--- !u!114 &1259282814057664109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5573873375814730958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1479993534, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererInfos:
+  - renderer: {fileID: 6529082478868298418}
+    defaultMaterial: {fileID: 2100000, guid: b19e08fec9d62f641a77592cea97d685, type: 2}
+    defaultShadowCastingMode: 0
+    ignoreOverlays: 0
+    hideOnDeath: 0
+  hideOnDeathObjects: []
 --- !u!1 &5573873376208313283
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,5 +214,10 @@ PrefabInstance:
 --- !u!4 &5391047556999676381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d429c392e2e8dd40964c5950d45f780, type: 3}
+  m_PrefabInstance: {fileID: 5573873376218932790}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6529082478868298418 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 0d429c392e2e8dd40964c5950d45f780, type: 3}
   m_PrefabInstance: {fileID: 5573873376218932790}
   m_PrefabAsset: {fileID: 0}

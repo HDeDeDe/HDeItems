@@ -34,7 +34,7 @@ namespace HDeMods.HDeItems.Tier1 {
                 return;
             }
             
-            CustomItem customItem = new CustomItem( item, new [] {new ItemDisplayRule()});
+            CustomItem customItem = new CustomItem( item, MouthwashItemDisplays.Dict());
             ItemAPI.Add(customItem);
             CharacterBody.onBodyInventoryChangedGlobal += OnInventoryChangedGlobal;
             
@@ -133,5 +133,57 @@ namespace HDeMods.HDeItems.Tier1 {
         [ClientRpc] public void RpcSetSize(Vector3 size) => SetSize(size);
         private void SetPosition(Vector3 position) => transform.localPosition = position;
         private void SetSize(Vector3 size) => scaleCurve.baseScale = size;
+    }
+
+    internal static class MouthwashItemDisplays {
+        public static ItemDisplayRuleDict Dict() {
+            ItemDisplayRuleDict dict = new ItemDisplayRuleDict();
+            dict.Add("", new [] {
+                    new ItemDisplayRule {
+                        ruleType = ItemDisplayRuleType.ParentedPrefab,
+                        followerPrefab = Mouthwash.item.pickupModelPrefab,
+                        childName = "Pelvis", 
+                        localPos = Vector3.zero,
+                        localAngles = Vector3.zero,
+                        localScale = Vector3.one
+                    } });
+            dict.Add("mdlCaptain", new [] {
+                new ItemDisplayRule {
+                    ruleType = ItemDisplayRuleType.ParentedPrefab,
+                    followerPrefab = Mouthwash.item.pickupModelPrefab,
+                    childName = "ThighL",
+                    localPos = new Vector3(0.09907F, 0.31531F, 0.12536F),
+                    localAngles = new Vector3(5.91019F, 233.3841F, 182.2552F),
+                    localScale = new Vector3(0.68848F, 0.68848F, 0.68848F)
+                } });
+            dict.Add("mdlCroco", new [] {
+                new ItemDisplayRule {
+                    ruleType = ItemDisplayRuleType.ParentedPrefab,
+                    followerPrefab = Mouthwash.item.pickupModelPrefab,
+                    childName = "MouthMuzzle",
+                    localPos = new Vector3(-2.25849F, 1.75344F, 1.86785F),
+                    localAngles = new Vector3(67.92722F, 6.17886F, 254.4054F),
+                    localScale = new Vector3(4.8312F, 4.8312F, 4.8312F)
+                } });
+            dict.Add("mdlSeeker", new [] {
+                new ItemDisplayRule {
+                    ruleType = ItemDisplayRuleType.ParentedPrefab,
+                    followerPrefab = Mouthwash.item.pickupModelPrefab,
+                    childName = "Pack",
+                    localPos = new Vector3(-0.14047F, 0.05488F, -0.21642F),
+                    localAngles = new Vector3(359.3977F, 356.4049F, 45.52491F),
+                    localScale = new Vector3(1F, 1F, 1F)
+                } });
+            dict.Add("mdlFalseSon", new [] {
+                new ItemDisplayRule {
+                    ruleType = ItemDisplayRuleType.ParentedPrefab,
+                    followerPrefab = Mouthwash.item.pickupModelPrefab,
+                    childName = "Head",
+                    localPos = new Vector3(0.0247F, 0.20892F, 0.46259F),
+                    localAngles = new Vector3(359.8492F, 93.74285F, 267.8969F),
+                    localScale = new Vector3(1F, 1F, 1F)
+                } });
+            return dict;
+        }
     }
 }
