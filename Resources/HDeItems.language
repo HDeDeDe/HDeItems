@@ -1,7 +1,7 @@
 {
   "strings" : {
     "HDE_EXPANSION_NAME": "HDeItems",
-    "HDE_EXPANSION_DESCRIPTION": "Just some items I decided to make on a whim :)",
+    "HDE_EXPANSION_DESCRIPTION": "Adds content from the 'HDeItems' mod to the game.",
     
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_1.RESET_TO_DEFAULT.GENERIC_BUTTON.NAME" : "Reset to Default",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_1.RESET_TO_DEFAULT.GENERIC_BUTTON.SUB_BUTTON.NAME" : "<style=cDeath>Reset</style>",
@@ -71,9 +71,9 @@
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_TIER_1.IONCUBE.CHECKBOX.DESCRIPTION" : "Enables Ion Cube. Default value is true. Requires restart.",
 
     "HDE_STASISRIFLE_NAME" : "Stasis Rifle",
-    "HDE_STASISRIFLE_PICKUP" : "IDK lol",
-    "HDE_STASISRIFLE_DESCRIPTION" : "IDK lol",
-    "HDE_STASISRIFLE_LORE" : "Stasis Rifle from Subnautica.",
+    "HDE_STASISRIFLE_PICKUP" : "<style=cIsUtility>Freezing</style>. Fire a <style=cIsDamage>piercing</style> ice bolt for <style=cIsDamage>5000%</style> damage.",
+    "HDE_STASISRIFLE_DESCRIPTION" : "Fire a <style=cIsDamage>piercing</style> ice bolt that deals <style=cIsDamage>5000%</style> damage. <style=cIsUtility>Freezes</style> enemies hit.",
+    "HDE_STASISRIFLE_LORE" : "<style=cMono>This item doesn't have proper lore right now.</style>\n\nStasis Rifle from Subnautica. I've never played the game lol.",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_EQUIPMENT.STASISRIFLE.CHECKBOX.NAME" : "Stasis Rifle",
     "RISK_OF_OPTIONS.COM.HDEDEDE.HDEITEMS.ITEMS_-_EQUIPMENT.STASISRIFLE.CHECKBOX.DESCRIPTION" : "Enables Stasis Rifle. Default value is true. Requires restart.",
     
