@@ -45,7 +45,7 @@ namespace $NAMESPACE$ {
             }
 
             CustomEquipment customEquipment = new CustomEquipment(Equipment, 
-                ItemManager.GetDisplayRules(nameof($CLASS$), Equipment, ItemDisplayRuleType.ParentedPrefab));
+                ItemDisplayHelper.GetDisplayRules(nameof($CLASS$), Equipment, ItemDisplayRuleType.ParentedPrefab));
             ItemAPI.Add(customEquipment);
             
             Log.Info("Successfully loaded " + nameof($CLASS$));
@@ -91,7 +91,7 @@ namespace $NAMESPACE$ {
             }
         
             CustomItem customItem = new CustomItem(item, 
-                ItemManager.GetDisplayRules(nameof($CLASS$), item, ItemDisplayRuleType.ParentedPrefab));
+                ItemDisplayHelper.GetDisplayRules(nameof($CLASS$), item, ItemDisplayRuleType.ParentedPrefab));
             ItemAPI.Add(customItem);
             
             Log.Info("Successfully loaded " + nameof($CLASS$));

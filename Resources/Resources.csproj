@@ -28,6 +28,7 @@
         <Content Include="HDeItems.language" />
         <Content Include="icon.png" />
         <Content Include="Ion_Cube_Render.png" />
+        <Content Include="ItemDisplayRules.md" />
         <Content Include="lib\ShaderSwapper.dll" />
         <Content Include="MouthwashingEntertainmentProductBig.png" />
         <Content Include="Mouthwash_transparent.png" />

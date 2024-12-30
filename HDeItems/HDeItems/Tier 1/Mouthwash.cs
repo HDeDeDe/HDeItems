@@ -34,7 +34,7 @@ namespace HDeMods.HDeItems.Tier1 {
             }
             
             CustomItem customItem = new CustomItem( item, 
-                ItemManager.GetDisplayRules(nameof(Mouthwash), item, ItemDisplayRuleType.ParentedPrefab) );
+                ItemDisplayHelper.GetDisplayRules(nameof(Mouthwash), item, ItemDisplayRuleType.ParentedPrefab) );
             ItemAPI.Add(customItem);
             CharacterBody.onBodyInventoryChangedGlobal += OnInventoryChangedGlobal;
             

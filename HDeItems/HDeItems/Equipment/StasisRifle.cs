@@ -35,7 +35,7 @@ namespace HDeMods.HDeItems.Equipment {
                 .WaitForCompletion();
 
             CustomEquipment customEquipment = new CustomEquipment(Equipment, 
-                ItemManager.GetDisplayRules(nameof(StasisRifle), Equipment, ItemDisplayRuleType.ParentedPrefab) );
+                ItemDisplayHelper.GetDisplayRules(nameof(StasisRifle), Equipment, ItemDisplayRuleType.ParentedPrefab));
             ItemAPI.Add(customEquipment);
             
             Log.Info("Successfully loaded " + nameof(StasisRifle));

@@ -24,7 +24,7 @@ namespace HDeMods.HDeItems.Tier2 {
             }
             
             CustomItem customItem = new CustomItem( item, 
-                ItemManager.GetDisplayRules(nameof(AggroUp), item, ItemDisplayRuleType.ParentedPrefab) );
+                ItemDisplayHelper.GetDisplayRules(nameof(AggroUp), item, ItemDisplayRuleType.ParentedPrefab) );
             ItemAPI.Add(customItem);
             
             RecalculateStatsAPI.GetStatCoefficients += RecalculateStats;

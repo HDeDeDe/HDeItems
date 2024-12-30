@@ -28,7 +28,7 @@ namespace HDeMods.HDeItems.Tier3 {
             }
 
             CustomItem customItem = new CustomItem(item, 
-                ItemManager.GetDisplayRules(nameof(Ouroboros), item, ItemDisplayRuleType.ParentedPrefab) );
+                ItemDisplayHelper.GetDisplayRules(nameof(Ouroboros), item, ItemDisplayRuleType.ParentedPrefab) );
             ItemAPI.Add(customItem);
             
             CharacterBody.onBodyInventoryChangedGlobal += OnInventoryChangedGlobal;
