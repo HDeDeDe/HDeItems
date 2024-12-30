@@ -42,6 +42,34 @@
                 "localPos": "0.25489F,0.65749F,-0.22725F",
                 "localAngles": "335.2906F,263.5544F,215.4086F",
                 "localScale": "1F,1F,1F"
+            },
+            "ToolbotBody": {
+                "modelName": "mdlToolbot",
+                "childName": "Chest",
+                "localPos": "1.04505F,1.93475F,2.84839F",
+                "localAngles": "276.9476F,252.245F,161.8208F",
+                "localScale": "5F,5F,5F"
+            },
+            "ChefBody": {
+                "modelName": "mdlChef",
+                "childName": "Chest",
+                "localPos": "-0.01978F,0.03677F,-0.04896F",
+                "localAngles": "357.2109F,273.4045F,309.2809F",
+                "localScale": "1F,1F,1F"
+            },
+            "VoidSurvivorBody": {
+                "modelName": "mdlVoidSurvivor",
+                "childName": "Chest",
+                "localPos": "-0.13221F,0.38159F,-0.48766F",
+                "localAngles": "303.958F,316.6417F,217.5359F",
+                "localScale": "0.65789F,0.65789F,0.65789F"
+            },
+            "RailgunnerBody": {
+                "modelName": "mdlRailGunner",
+                "childName": "ThighR",
+                "localPos": "-0.13064F,0.19221F,0.02182F",
+                "localAngles": "7.45622F,280.4494F,183.0925F",
+                "localScale": "0.62117F,0.62117F,0.62117F"
             }
         },
         "StasisRifle" : {
@@ -79,6 +107,41 @@
                 "localPos": "-0.35688F,0.00362F,0.14614F",
                 "localAngles": "357.7778F,273.5841F,266.5621F",
                 "localScale": "0.22777F,0.22777F,0.22777F"
+            },
+            "HereticBody": {
+                "modelName": "mdlHeretic",
+                "childName": "Chest",
+                "localPos": "-0.97856F,-0.32312F,0.58468F",
+                "localAngles": "317.1797F,302.3665F,152.0387F",
+                "localScale": "0.321F,0.321F,0.321F"
+            },
+            "ToolbotBody": {
+                "modelName": "mdlToolbot",
+                "childName": "Chest",
+                "localPos": "-2.01427F,2.85014F,0.24087F",
+                "localAngles": "0F,0F,0F",
+                "localScale": "1F,1F,1F"
+            },
+            "ChefBody": {
+                "modelName": "mdlChef",
+                "childName": "Chest",
+                "localPos": "-0.36089F,0.13892F,0.24951F",
+                "localAngles": "273.4656F,345.7063F,101.122F",
+                "localScale": "0.22529F,0.22529F,0.22529F"
+            },
+            "VoidSurvivorBody": {
+                "modelName": "mdlVoidSurvivor",
+                "childName": "Chest",
+                "localPos": "0.39465F,0.46435F,0.10747F",
+                "localAngles": "345.975F,358.3314F,276.8544F",
+                "localScale": "0.15158F,0.15158F,0.15158F"
+            },
+            "RailgunnerBody": {
+                "modelName": "mdlRailGunner",
+                "childName": "GunScope",
+                "localPos": "0.03485F,-0.20596F,0.29475F",
+                "localAngles": "0F,0.00006F,203.2097F",
+                "localScale": "0.12348F,0.12348F,0.12348F"
             }
         },
         "Ouroboros" : {
@@ -116,6 +179,41 @@
                 "localPos": "-0.00137F,0.17199F,0.2092F",
                 "localAngles": "27.08798F,359.2762F,358.0085F",
                 "localScale": "0.07756F,0.07756F,0.07756F"
+            },
+            "HereticBody": {
+                "modelName": "mdlHeretic",
+                "childName": "FootL",
+                "localPos": "0.16283F,-0.3141F,0.04276F",
+                "localAngles": "3.45475F,10.80633F,90.73709F",
+                "localScale": "0.16497F,0.16497F,0.16497F"
+            },
+            "ToolbotBody": {
+                "modelName": "mdlToolbot",
+                "childName": "Finger11R",
+                "localPos": "-0.09192F,0.4781F,-0.27358F",
+                "localAngles": "359.5707F,23.59783F,102.0758F",
+                "localScale": "0.7084F,0.7084F,0.7084F"
+            },
+            "ChefBody": {
+                "modelName": "mdlChef",
+                "childName": "Chest",
+                "localPos": "-0.09985F,-0.46407F,0.22764F",
+                "localAngles": "61.74915F,100.6504F,169.9985F",
+                "localScale": "0.12445F,0.12445F,0.12445F"
+            },
+            "VoidSurvivorBody": {
+                "modelName": "mdlVoidSurvivor",
+                "childName": "RingFinger",
+                "localPos": "0.00438F,0.07215F,0.0183F",
+                "localAngles": "358.6085F,329.1119F,272.465F",
+                "localScale": "0.09198F,0.09198F,0.09198F"
+            },
+            "RailgunnerBody": {
+                "modelName": "mdlRailGunner",
+                "childName": "Finger3L",
+                "localPos": "-0.00942F,0.03632F,0.00083F",
+                "localAngles": "6.33744F,231.5996F,279.6803F",
+                "localScale": "0.07436F,0.07436F,0.07436F"
             }
         },
         "AggroDown": {
@@ -153,6 +251,41 @@
                 "localPos": "0.16357F,-0.07124F,-0.05012F",
                 "localAngles": "335.0996F,288.5809F,160.7539F",
                 "localScale": "0.03824F,0.03824F,0.03824F"
+            },
+            "HereticBody": {
+                "modelName": "mdlHeretic",
+                "childName": "Pelvis",
+                "localPos": "-0.19459F,0.09359F,0.33109F",
+                "localAngles": "351.9398F,17.69635F,34.99089F",
+                "localScale": "0.12845F,0.12845F,0.12845F"
+            },
+            "ToolbotBody": {
+                "modelName": "mdlToolbot",
+                "childName": "HeadCenter",
+                "localPos": "1.25724F,0.13235F,0.85297F",
+                "localAngles": "1.63037F,70.48853F,32.47399F",
+                "localScale": "0.31207F,0.31207F,0.31207F"
+            },
+            "ChefBody": {
+                "modelName": "mdlChef",
+                "childName": "Head",
+                "localPos": "-0.34928F,-0.00759F,-0.19533F",
+                "localAngles": "355.0402F,23.25683F,67.38043F",
+                "localScale": "0.05766F,0.05766F,0.05766F"
+            },
+            "VoidSurvivorBody": {
+                "modelName": "mdlVoidSurvivor",
+                "childName": "Head",
+                "localPos": "0.11324F,0.12439F,0.07337F",
+                "localAngles": "60.55321F,72.05154F,340.5135F",
+                "localScale": "0.07099F,0.07099F,0.07099F"
+            },
+            "RailgunnerBody": {
+                "modelName": "mdlRailGunner",
+                "childName": "Backpack",
+                "localPos": "0.00666F,0.46187F,-0.0365F",
+                "localAngles": "337.1765F,186.793F,156.6002F",
+                "localScale": "0.05395F,0.05395F,0.05395F"
             }
         },
         "AggroUp": {
@@ -190,6 +323,41 @@
                 "localPos": "0.0959F,0.17847F,0.2431F",
                 "localAngles": "59.25008F,178.8898F,179.369F",
                 "localScale": "0.10229F,0.10229F,0.10229F"
+            },
+            "HereticBody": {
+                "modelName": "mdlHeretic",
+                "childName": "Pelvis",
+                "localPos": "-0.26302F,-0.09162F,0.37475F",
+                "localAngles": "5.69685F,36.77046F,69.52849F",
+                "localScale": "0.34777F,0.34777F,0.34777F"
+            },
+            "ToolbotBody": {
+                "modelName": "mdlToolbot",
+                "childName": "Hip",
+                "localPos": "1.10118F,1.9373F,0.00003F",
+                "localAngles": "55.19107F,154.5032F,150.1391F",
+                "localScale": "1.25511F,1.25511F,1.25511F"
+            },
+            "ChefBody": {
+                "modelName": "mdlChef",
+                "childName": "OvenDoor",
+                "localPos": "-0.50135F,0.02269F,0.08529F",
+                "localAngles": "352.678F,330.2832F,276.6539F",
+                "localScale": "0.16311F,0.16311F,0.16311F"
+            },
+            "VoidSurvivorBody": {
+                "modelName": "mdlVoidSurvivor",
+                "childName": "CannonEnd",
+                "localPos": "0.0969F,-0.1017F,-0.2567F",
+                "localAngles": "47.0989F,185.5594F,355.9062F",
+                "localScale": "0.22377F,0.22377F,0.22377F"
+            },
+            "RailgunnerBody": {
+                "modelName": "mdlRailGunner",
+                "childName": "MuzzleSniper",
+                "localPos": "0.00053F,0.00002F,-0.05194F",
+                "localAngles": "59.80934F,181.7209F,180F",
+                "localScale": "0.16117F,0.16117F,0.16117F"
             }
         }
     }
