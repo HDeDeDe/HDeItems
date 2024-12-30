@@ -70,6 +70,13 @@
                 "localPos": "-0.13064F,0.19221F,0.02182F",
                 "localAngles": "7.45622F,280.4494F,183.0925F",
                 "localScale": "0.62117F,0.62117F,0.62117F"
+            },
+            "LeeHyperrealBody": {
+                "modelName": "mdlLeeHyperreal",
+                "childName": "ThighR",
+                "localPos": "-0.10244F,0.1609F,-0.06005F",
+                "localAngles": "5.94177F,228.6622F,176.8306F",
+                "localScale": "0.50566F,0.50566F,0.50566F"
             }
         },
         "StasisRifle" : {
@@ -142,6 +149,13 @@
                 "localPos": "0.03485F,-0.20596F,0.29475F",
                 "localAngles": "0F,0.00006F,203.2097F",
                 "localScale": "0.12348F,0.12348F,0.12348F"
+            },
+            "LeeHyperrealBody": {
+                "modelName": "mdlLeeHyperreal",
+                "childName": "ShoulderL",
+                "localPos": "0.16102F,0.081F,-0.09246F",
+                "localAngles": "0.5043F,89.72314F,277.2075F",
+                "localScale": "0.13198F,0.13198F,0.13198F"
             }
         },
         "Ouroboros" : {
@@ -214,6 +228,13 @@
                 "localPos": "-0.00942F,0.03632F,0.00083F",
                 "localAngles": "6.33744F,231.5996F,279.6803F",
                 "localScale": "0.07436F,0.07436F,0.07436F"
+            },
+            "LeeHyperrealBody": {
+                "modelName": "mdlLeeHyperreal",
+                "childName": "ForearmL",
+                "localPos": "-0.00257F,0.18494F,0.01893F",
+                "localAngles": "22.07682F,4.42082F,356.6323F",
+                "localScale": "0.04323F,0.04323F,0.04323F"
             }
         },
         "AggroDown": {
@@ -286,6 +307,13 @@
                 "localPos": "0.00666F,0.46187F,-0.0365F",
                 "localAngles": "337.1765F,186.793F,156.6002F",
                 "localScale": "0.05395F,0.05395F,0.05395F"
+            },
+            "LeeHyperrealBody": {
+                "modelName": "mdlLeeHyperreal",
+                "childName": "WeaponCase1",
+                "localPos": "-0.0585F,0.23439F,0.1513F",
+                "localAngles": "355.6187F,254.0305F,239.237F",
+                "localScale": "0.02742F,0.02742F,0.02742F"
             }
         },
         "AggroUp": {
@@ -358,6 +386,13 @@
                 "localPos": "0.00053F,0.00002F,-0.05194F",
                 "localAngles": "59.80934F,181.7209F,180F",
                 "localScale": "0.16117F,0.16117F,0.16117F"
+            },
+            "LeeHyperrealBody": {
+                "modelName": "mdlLeeHyperreal",
+                "childName": "Lowerspine",
+                "localPos": "-0.0915F,-0.01935F,-0.09983F",
+                "localAngles": "23.60072F,248.6292F,357.5481F",
+                "localScale": "0.10677F,0.10677F,0.10677F"
             }
         }
     }
